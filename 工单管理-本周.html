@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1d1d1f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="工单管理">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="工单管理">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+  <title>本周工单表 - 工单管理系统</title>
+  <style>
+    /* ========== Design Tokens ========== */
+    :root {
+      --bg: #f5f5f7;
+      --surface: rgba(255, 255, 255, 0.72);
+      --surface-solid: #ffffff;
+      --surface-hover: rgba(255, 255, 255, 0.90);
+      --border: rgba(0, 0, 0, 0.06);
+      --border-strong: rgba(0, 0, 0, 0.10);
+      --text: #1d1d1f;
+      --text-secondary: #6e6e73;
+      --text-tertiary: #86868b;
+      --accent: #000000;
+      --accent-subtle: #1d1d1f;
+      --success: #2d8a6e;
+      --radius: 16px;
+      --radius-sm: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
+      --shadow-hover: 0 4px 12px rgba(0,0,0,0.06), 0 16px 48px rgba(0,0,0,0.08);
+      --transition: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* ========== Page Transition System ========== */
+    .page-wrapper {
+      transition: transform 400ms cubic-bezier(0.25, 0.1, 0.25, 1),
+                  opacity 400ms cubic-bezier(0.25, 0.1, 0.25, 1),
+                  filter 400ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .page-wrapper.exit-left {
+      transform: translateX(-40%);
+      opacity: 0;
+      filter: blur(8px);
+    }
+
+    .page-wrapper.exit-right {
+      transform: translateX(40%);
+      opacity: 0;
+      filter: blur(8px);
+    }
+
+    /* ========== Depth Layers ========== */
+    .depth-bg {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.03) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      transition: transform 500ms cubic-bezier(0.25, 0.1, 0.25, 1),
+                  opacity 500ms cubic-bezier(0.25, 0.1, 0.25, 1),
+                  filter 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    body.exit-left .depth-bg,
+    body.exit-right .depth-bg {
+      transform: scale(0.95);
+      filter: blur(4px);
+      opacity: 0;
+    }
+
+    /* ========== Container ========== */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 48px 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ========== Enter Animation (Stagger) ========== */
+    body.page-enter .stagger-item {
+      animation: enterSlideIn 500ms cubic-bezier(0.25, 0.1, 0.25, 1) both;
+    }
+
+    body.page-enter .stagger-0 { animation-delay: 0ms; }
+    body.page-enter .stagger-1 { animation-delay: 60ms; }
+    body.page-enter .stagger-2 { animation-delay: 120ms; }
+
+    @keyframes enterSlideIn {
+      from {
+        transform: translateX(40%);
+        opacity: 0;
+        filter: blur(12px);
+        scale: 0.97;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+        filter: blur(0);
+        scale: 1;
+      }
+    }
+
+    body:not(.page-enter) .stagger-item {
+      animation: none;
+    }
+
+    /* ========== Breadcrumb ========== */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .breadcrumb a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    .breadcrumb a:hover {
+      background: var(--surface-solid);
+      color: var(--text);
+    }
+
+    .breadcrumb a svg {
+      width: 14px; height: 14px;
+      stroke-width: 1.5;
+    }
+
+    .breadcrumb .separator {
+      color: var(--text-tertiary);
+      user-select: none;
+    }
+
+    .breadcrumb .current {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ========== Header ========== */
+    header {
+      text-align: center;
+      padding: 0 0 32px;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+      opacity: 0.15;
+    }
+
+    header .header-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px; height: 48px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      margin-bottom: 20px;
+      background: var(--surface-solid);
+      transition: var(--transition);
+    }
+
+    header .header-icon svg {
+      width: 22px; height: 22px;
+      color: var(--accent);
+      stroke-width: 1.5;
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    header p {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-top: 10px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    /* ========== Section ========== */
+    .section {
+      background: var(--surface);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .section:hover {
+      box-shadow: var(--shadow-hover);
+      border-color: var(--border-strong);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header h2 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-header h2 .icon {
+      width: 28px; height: 28px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .section-header h2 .icon svg {
+      width: 14px; height: 14px;
+      color: var(--text-secondary);
+      stroke-width: 1.5;
+    }
+
+    .section-body { padding: 24px 28px; }
+
+    .week-table-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: visible;
+    }
+
+    /* ========== Week Nav ========== */
+    .week-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .week-nav button {
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      width: 36px; height: 36px;
+      border-radius: 10px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-secondary);
+      transition: var(--transition);
+      padding: 0;
+    }
+
+    .week-nav button:hover {
+      border-color: var(--text-secondary);
+      color: var(--text);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+    }
+
+    .week-nav .week-range {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      min-width: 180px;
+      text-align: center;
+      letter-spacing: -0.01em;
+    }
+
+    /* ========== Buttons ========== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+      font-family: inherit;
+      letter-spacing: -0.01em;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-subtle);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 13px;
+    }
+
+    .btn-secondary {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-strong);
+    }
+
+    /* ========== Week Table ========== */
+    .week-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+    }
+    .week-table thead th {
+      background: var(--surface-solid);
+      padding: 12px 14px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 1.5px solid var(--border);
+    }
+    .week-table tbody tr {
+      transition: var(--transition);
+    }
+    .week-table tbody tr:hover {
+      background: rgba(0,0,0,0.02);
+    }
+    .week-table tbody td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .week-table .cell-center {
+      text-align: center;
+    }
+    .week-table .cell-channel {
+      font-weight: 600;
+      color: var(--text);
+    }
+    .week-table .cell-count {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--accent);
+    }
+    .week-table .cell-yes {
+      color: var(--success);
+      font-weight: 600;
+    }
+    .week-table .cell-no {
+      color: var(--text-tertiary);
+    }
+    .week-table .cell-resource {
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 480px;
+    }
+    .week-table .cell-resource .resource-item {
+      display: block;
+      margin-bottom: 6px;
+      word-break: break-word;
+    }
+    .week-table .cell-resource .resource-item:last-child {
+      margin-bottom: 0;
+    }
+    .week-table .cell-resource .resource-item .res-name {
+      font-weight: 600;
+      color: var(--text);
+    }
+    .week-table tbody tr.empty-row td {
+      text-align: center;
+      color: var(--text-tertiary);
+      padding: 40px 14px;
+    }
+
+    /* ========== Import / Export Area ========== */
+    .import-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .import-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      letter-spacing: 0.02em;
+      font-family: inherit;
+    }
+    .import-btn:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+    .import-btn:active {
+      transform: scale(0.98);
+    }
+    .import-hint {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.02em;
+    }
+    .import-toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 2000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      white-space: nowrap;
+    }
+    .import-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* ========== Toast ========== */
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.15);
+      z-index: 2000;
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+      letter-spacing: -0.01em;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ========== Responsive ========== */
+    @media (max-width: 1100px) {
+      .week-table .cell-resource { max-width: 220px; }
+    }
+
+    @media (max-width: 900px) {
+      .container { padding: 32px 20px; }
+    }
+
+    @media (max-width: 600px) {
+      .week-table { font-size: 13px; }
+      .week-table thead th, .week-table tbody td { padding: 10px 8px; }
+      .container { padding: 24px 16px; }
+      header h1 { font-size: 24px; }
+      .section-body { padding: 20px; }
+      .section-header { padding: 16px 20px; }
+    }
+  </style>
+  <script src="config.js"></script>
+  <script src="data-service.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+  <div class="depth-bg"></div>
+  <div class="page-wrapper" id="pageWrapper">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb stagger-item stagger-0">
+        <a href="工单管理-主页.html" onclick="return navigateBack(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          返回主页
+        </a>
+        <span class="separator">/</span>
+        <span class="current">本周工单表</span>
+      </div>
+
+      <header class="stagger-item stagger-0">
+        <div class="header-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+        </div>
+        <h1>本周工单表</h1>
+        <p>按渠道聚合查看本周工单统计与资源情况</p>
+      </header>
+
+      <!-- 本周工单表 -->
+      <div class="section stagger-item stagger-1">
+        <div class="section-header">
+          <h2><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg></span> 渠道聚合</h2>
+          <span id="weekSummary" style="font-size:13px;color:var(--text-secondary);font-weight:500;"></span>
+        </div>
+        <div class="section-body">
+          <div class="week-nav stagger-item stagger-2">
+            <button onclick="changeWeek(-1)" aria-label="上一周">
+              <svg style="width:16px;height:16px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <span class="week-range" id="weekRange"></span>
+            <button onclick="changeWeek(1)" aria-label="下一周">
+              <svg style="width:16px;height:16px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <button onclick="goToCurrentWeek()" class="btn btn-sm btn-secondary" style="margin-left:8px;">本周</button>
+          </div>
+          <div class="week-table-wrapper">
+          <table class="week-table stagger-item stagger-2" id="weekTable">
+            <thead>
+              <tr>
+                <th style="text-align:left;">渠道</th>
+                <th style="text-align:center;">工单量</th>
+                <th style="text-align:center;">到店</th>
+                <th style="text-align:center;">腾讯会议</th>
+                <th style="text-align:center;">已成单</th>
+                <th style="text-align:left;">资源情况</th>
+              </tr>
+            </thead>
+            <tbody id="weekTableBody">
+              <!-- 动态生成 -->
+            </tbody>
+          </table>
+          </div>
+
+          <!-- 导入导出按钮 -->
+          <div class="import-area stagger-item stagger-2">
+            <input type="file" id="obsidianFileInput" accept=".json" style="display:none">
+            <button class="import-btn" onclick="document.getElementById('obsidianFileInput').click()" title="选择Obsidian导出的JSON文件">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              导入Obsidian
+            </button>
+            <span class="import-hint">选择 sync_obsidian.py 生成的 JSON 文件</span>
+            <button class="import-btn" onclick="exportAsPng()" title="将本周工单表导出为PNG图片" style="background:var(--surface-solid);color:var(--text);border:1px solid var(--border-strong);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              导出PNG
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ========== Page Transition ==========
+    function navigateBack(event) {
+      event.preventDefault();
+      sessionStorage.setItem('pageAnim', 'fromWeek');
+      document.body.classList.add('exit-right');
+      const wrapper = document.getElementById('pageWrapper');
+      wrapper.classList.add('exit-right');
+      setTimeout(() => {
+        window.location.href = '工单管理-主页.html';
+      }, 400);
+      return false;
+    }
+
+    // ========== Import Toast ==========
+    function showImportToast(msg) {
+      let toast = document.getElementById('importToast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'importToast';
+        toast.className = 'import-toast';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    // ========== Toast ==========
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    // ========== Data Management ==========
+    const CACHE_KEY_V1 = 'work_orders_cache_v1';
+    const STORAGE_KEY = 'work_orders_v2';
+    let currentWeekOffset = 0;
+
+    function loadData() {
+      // 优先读云端缓存（同步，立即返回）
+      try {
+        const raw = localStorage.getItem(CACHE_KEY_V1);
+        if (raw) {
+          const data = JSON.parse(raw);
+          if (Array.isArray(data)) return data;
+        }
+      } catch {}
+      // fallback: 读旧 localStorage
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return [];
+        const data = JSON.parse(raw);
+        return data.map(o => ({
+          ...o,
+          firstDate: o.firstDate || o.date || ''
+        }));
+      } catch {
+        return [];
+      }
+    }
+
+    function saveData(data) {
+      // 只写本地缓存，云端由具体操作触发
+      try {
+        localStorage.setItem(CACHE_KEY_V1, JSON.stringify(data));
+      } catch {}
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[m]));
+    }
+
+    // ========== Date Utilities ==========
+    function getWeekRange(offset = 0) {
+      const now = new Date();
+      const dayOfWeek = now.getDay();
+      const diffToMon = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+      const monday = new Date(now);
+      monday.setDate(now.getDate() + diffToMon + offset * 7);
+      monday.setHours(0, 0, 0, 0);
+      const sunday = new Date(monday);
+      sunday.setDate(monday.getDate() + 6);
+      sunday.setHours(23, 59, 59, 999);
+      return { monday, sunday };
+    }
+
+    function formatDate(d) {
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${y}-${m}-${day}`;
+    }
+
+    // ========== Obsidian Merge ==========
+    function mergeObsidianData(obsidianOrders) {
+      const localData = loadData();
+      const obsidianMap = new Map();
+      obsidianOrders.forEach(o => {
+        const key = `${o.name}_${o.firstDate || o.date || ''}`;
+        obsidianMap.set(key, o);
+      });
+      localData.forEach(d => {
+        const key = `${d.name}_${d.firstDate || d.date || ''}`;
+        if (!obsidianMap.has(key)) {
+          obsidianMap.set(key, d);
+        }
+      });
+      const merged = Array.from(obsidianMap.values());
+      merged.sort((a, b) => ((b.firstDate || b.date || '').localeCompare(a.firstDate || a.date || '')));
+      saveData(merged);
+      return merged;
+    }
+
+    function syncFromObsidian() {
+      if (typeof OBSIDIAN_ORDERS === 'undefined' || !OBSIDIAN_ORDERS.length) {
+        showImportToast('Obsidian数据未加载');
+        return;
+      }
+      const merged = mergeObsidianData(OBSIDIAN_ORDERS);
+      renderWeek();
+      showImportToast(`已同步 ${OBSIDIAN_ORDERS.length} 条工单`);
+    }
+
+    // ========== Export as PNG ==========
+    function exportAsPng() {
+      if (typeof html2canvas !== 'function') {
+        showImportToast('截图库未加载，请刷新页面');
+        return;
+      }
+      const section = document.querySelector('.section');
+      if (!section) {
+        showImportToast('未找到内容区域');
+        return;
+      }
+      showImportToast('正在生成截图...');
+      try {
+        html2canvas(section, {
+          backgroundColor: '#f5f5f7',
+          scale: 2,
+          useCORS: true,
+          logging: false
+        }).then(function(canvas) {
+          var link = document.createElement('a');
+          var dateStr = new Date().toISOString().slice(0, 10);
+          link.download = '本周工单表-' + dateStr + '.png';
+          link.href = canvas.toDataURL('image/png');
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          showImportToast('截图已导出');
+        }).catch(function(err) {
+          console.error('Export error:', err);
+          showImportToast('截图失败: ' + err.message);
+        });
+      } catch(e) {
+        console.error('Export exception:', e);
+        showImportToast('截图异常: ' + e.message);
+      }
+    }
+
+    // ========== Week Table Render ==========
+    function renderWeek() {
+      const { monday, sunday } = getWeekRange(currentWeekOffset);
+      const data = loadData();
+      const tbody = document.getElementById('weekTableBody');
+      const rangeText = document.getElementById('weekRange');
+
+      rangeText.textContent = `${formatDate(monday)} ~ ${formatDate(sunday)}`;
+
+      const weekOrders = data.filter(o => {
+        const d = o.firstDate;
+        return d >= formatDate(monday) && d <= formatDate(sunday);
+      });
+
+      const byChannel = {};
+      weekOrders.forEach(o => {
+        const ch = o.market || '未填写';
+        if (!byChannel[ch]) {
+          byChannel[ch] = { count: 0, visited: 0, meeting: 0, deal: 0, items: [] };
+        }
+        byChannel[ch].count++;
+        if (o.visitDate) byChannel[ch].visited++;
+        if (o.meeting) byChannel[ch].meeting++;
+        if (o.deal || o.type === 'S') byChannel[ch].deal++;
+        byChannel[ch].items.push({ name: o.name || '未命名', content: o.content || '' });
+      });
+
+      const channels = Object.entries(byChannel).sort((a, b) => b[1].count - a[1].count);
+      const weekTotal = weekOrders.length;
+
+      if (channels.length === 0) {
+        tbody.innerHTML = `
+          <tr class="empty-row">
+            <td colspan="6">
+              <svg style="width:40px;height:40px;color:var(--text-tertiary);margin-bottom:8px;" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+              <div>本周暂无工单</div>
+            </td>
+          </tr>
+        `;
+        document.getElementById('weekSummary').textContent = '本周共 0 条';
+        return;
+      }
+
+      let html = '';
+      channels.forEach(([chName, chData]) => {
+        const resourceHtml = chData.items.length > 0
+          ? chData.items.map(item => `<div class="resource-item"><span class="res-name">${escapeHtml(item.name)}</span>：${escapeHtml(item.content)}</div>`).join('')
+          : '<span style="color:var(--text-tertiary);">—</span>';
+
+        html += `
+          <tr>
+            <td class="cell-channel">${escapeHtml(chName)}</td>
+            <td class="cell-center cell-count">${chData.count}</td>
+            <td class="cell-center ${chData.visited > 0 ? 'cell-yes' : 'cell-no'}">${chData.visited > 0 ? chData.visited : '—'}</td>
+            <td class="cell-center ${chData.meeting > 0 ? 'cell-yes' : 'cell-no'}">${chData.meeting > 0 ? chData.meeting : '—'}</td>
+            <td class="cell-center ${chData.deal > 0 ? 'cell-yes' : 'cell-no'}">${chData.deal > 0 ? chData.deal : '—'}</td>
+            <td class="cell-resource">${resourceHtml}</td>
+          </tr>
+        `;
+      });
+
+      tbody.innerHTML = html;
+      document.getElementById('weekSummary').textContent = `本周共 ${weekTotal} 条 · ${channels.length} 个渠道`;
+    }
+
+    function changeWeek(delta) {
+      currentWeekOffset += delta;
+      renderWeek();
+    }
+
+    function goToCurrentWeek() {
+      currentWeekOffset = 0;
+      renderWeek();
+    }
+
+    // ========== File Import ==========
+    document.getElementById('obsidianFileInput').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        try {
+          const obsidianOrders = JSON.parse(evt.target.result);
+          if (!Array.isArray(obsidianOrders)) {
+            showImportToast('JSON格式错误：应为数组');
+            return;
+          }
+          mergeObsidianData(obsidianOrders);
+          renderWeek();
+          showImportToast(`成功导入 ${obsidianOrders.length} 条工单`);
+        } catch (err) {
+          showImportToast('解析失败：' + err.message);
+        }
+      };
+      reader.readAsText(file);
+      this.value = '';
+    });
+
+    // ========== Init ==========
+    let _cloudReadyWeek = false;
+
+    function syncFromCloudWeek() {
+      if (!window.WorkOrderService || !_cloudReadyWeek) return;
+      WorkOrderService.loadData().then(data => {
+        // data-service.js 已更新缓存，重新渲染
+        renderWeek();
+        console.log('[工单系统-本周] 云端同步完成，' + data.length + ' 条');
+      }).catch(err => {
+        console.warn('[工单系统-本周] 云端同步失败：', err);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const animDir = sessionStorage.getItem('pageAnim');
+
+      // Enter animation
+      if (animDir === 'fromHome') {
+        document.body.classList.add('page-enter');
+      } else {
+        // Fresh load or other
+        document.body.classList.add('page-enter');
+        const style = document.createElement('style');
+        style.textContent = `
+          @keyframes enterSlideIn {
+            from { transform: translateY(16px); opacity: 0; filter: blur(6px); scale: 0.97; }
+            to { transform: translateY(0); opacity: 1; filter: blur(0); scale: 1; }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+
+      // ---- 云端初始化 ----
+      if (window.WorkOrderService) {
+        WorkOrderService.init().then(() => {
+          _cloudReadyWeek = true;
+          // 后台同步云端数据
+          syncFromCloudWeek();
+        }).catch(err => {
+          console.warn('[工单系统-本周] 云端初始化失败：', err.message);
+        });
+      }
+
+      // Merge Obsidian data on load
+      if (typeof OBSIDIAN_ORDERS !== 'undefined' && OBSIDIAN_ORDERS.length > 0) {
+        mergeObsidianData(OBSIDIAN_ORDERS);
+      }
+      renderWeek();
+
+      // Clean up
+      setTimeout(() => {
+        sessionStorage.removeItem('pageAnim');
+      }, 1000);
+    });
+  </script>
+  <!-- PWA Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+        .then((reg) => console.log('SW registered:', reg.scope))
+        .catch((err) => console.log('SW failed:', err));
+    }
+  </script>
+</body>
+</html>

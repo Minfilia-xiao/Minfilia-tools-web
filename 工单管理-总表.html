@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1d1d1f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="工单管理">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="工单管理">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+  <title>工单总表 - 工单管理系统</title>
+  <style>
+    /* ========== Design Tokens ========== */
+    :root {
+      --bg: #f5f5f7;
+      --surface: rgba(255, 255, 255, 0.72);
+      --surface-solid: #ffffff;
+      --surface-hover: rgba(255, 255, 255, 0.90);
+      --border: rgba(0, 0, 0, 0.06);
+      --border-strong: rgba(0, 0, 0, 0.10);
+      --text: #1d1d1f;
+      --text-secondary: #6e6e73;
+      --text-tertiary: #86868b;
+      --accent: #000000;
+      --accent-subtle: #1d1d1f;
+      --danger: #c0392b;
+      --radius: 16px;
+      --radius-sm: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
+      --shadow-hover: 0 4px 12px rgba(0,0,0,0.06), 0 16px 48px rgba(0,0,0,0.08);
+      --shadow-modal: 0 24px 80px rgba(0,0,0,0.15);
+      --transition: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* ========== Page Transition System ========== */
+    .page-wrapper {
+      transition: transform 400ms cubic-bezier(0.25, 0.1, 0.25, 1),
+                  opacity 400ms cubic-bezier(0.25, 0.1, 0.25, 1),
+                  filter 400ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .page-wrapper.exit-left {
+      transform: translateX(-40%);
+      opacity: 0;
+      filter: blur(8px);
+    }
+
+    .page-wrapper.exit-right {
+      transform: translateX(40%);
+      opacity: 0;
+      filter: blur(8px);
+    }
+
+    /* ========== Depth Layers ========== */
+    .depth-bg {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.03) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      transition: transform 500ms cubic-bezier(0.25, 0.1, 0.25, 1),
+                  opacity 500ms cubic-bezier(0.25, 0.1, 0.25, 1),
+                  filter 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    body.exit-left .depth-bg,
+    body.exit-right .depth-bg {
+      transform: scale(0.95);
+      filter: blur(4px);
+      opacity: 0;
+    }
+
+    /* ========== Container ========== */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 48px 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ========== Enter Animation (Stagger) ========== */
+    body.page-enter .stagger-item {
+      animation: enterSlideIn 500ms cubic-bezier(0.25, 0.1, 0.25, 1) both;
+    }
+
+    body.page-enter .stagger-0 { animation-delay: 0ms; }
+    body.page-enter .stagger-1 { animation-delay: 60ms; }
+    body.page-enter .stagger-2 { animation-delay: 120ms; }
+
+    @keyframes enterSlideIn {
+      from {
+        transform: translateX(40%);
+        opacity: 0;
+        filter: blur(12px);
+        scale: 0.97;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+        filter: blur(0);
+        scale: 1;
+      }
+    }
+
+    body:not(.page-enter) .stagger-item {
+      animation: none;
+    }
+
+    /* ========== Breadcrumb ========== */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .breadcrumb a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    .breadcrumb a:hover {
+      background: var(--surface-solid);
+      color: var(--text);
+    }
+
+    .breadcrumb a svg {
+      width: 14px; height: 14px;
+      stroke-width: 1.5;
+    }
+
+    .breadcrumb .separator {
+      color: var(--text-tertiary);
+      user-select: none;
+    }
+
+    .breadcrumb .current {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ========== Header ========== */
+    header {
+      text-align: center;
+      padding: 0 0 32px;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+      opacity: 0.15;
+    }
+
+    header .header-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px; height: 48px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      margin-bottom: 20px;
+      background: var(--surface-solid);
+      transition: var(--transition);
+    }
+
+    header .header-icon svg {
+      width: 22px; height: 22px;
+      color: var(--accent);
+      stroke-width: 1.5;
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    header p {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-top: 10px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    /* ========== Section ========== */
+    .section {
+      background: var(--surface);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .section:hover {
+      box-shadow: var(--shadow-hover);
+      border-color: var(--border-strong);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header h2 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-header h2 .icon {
+      width: 28px; height: 28px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .section-header h2 .icon svg {
+      width: 14px; height: 14px;
+      color: var(--text-secondary);
+      stroke-width: 1.5;
+    }
+
+    .section-body { padding: 24px 28px; }
+
+    /* ========== Stats ========== */
+    .stats-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      background: var(--surface-solid);
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      border: 1px solid var(--border);
+      transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1),
+                  background 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+                  color 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+                  border-color 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+                  box-shadow 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(0,0,0,0.06) 0%, transparent 70%);
+      opacity: 0;
+      transform: scale(0.5);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      border-radius: inherit;
+      pointer-events: none;
+    }
+
+    .stat-item:active {
+      transform: scale(0.94);
+    }
+
+    .stat-item:active::after {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    .stat-item:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .stat-item.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      animation: statActivate 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .stat-item.active strong {
+      color: #fff;
+    }
+
+    @keyframes statActivate {
+      0% { transform: scale(0.92); filter: blur(2px); }
+      50% { transform: scale(1.04); filter: blur(0px); }
+      100% { transform: scale(1); filter: blur(0px); }
+    }
+
+    .stat-item strong {
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 600;
+      margin-right: 6px;
+      letter-spacing: -0.03em;
+      transition: color 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    /* ========== Table Row Animation ========== */
+    .data-table tbody tr {
+      animation: rowIn 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+    }
+    .data-table tbody tr:nth-child(1) { animation-delay: 0ms; }
+    .data-table tbody tr:nth-child(2) { animation-delay: 25ms; }
+    .data-table tbody tr:nth-child(3) { animation-delay: 50ms; }
+    .data-table tbody tr:nth-child(4) { animation-delay: 75ms; }
+    .data-table tbody tr:nth-child(5) { animation-delay: 100ms; }
+    .data-table tbody tr:nth-child(6) { animation-delay: 125ms; }
+    .data-table tbody tr:nth-child(7) { animation-delay: 150ms; }
+    .data-table tbody tr:nth-child(8) { animation-delay: 175ms; }
+    .data-table tbody tr:nth-child(9) { animation-delay: 200ms; }
+    .data-table tbody tr:nth-child(10) { animation-delay: 225ms; }
+    .data-table tbody tr:nth-child(11) { animation-delay: 250ms; }
+    .data-table tbody tr:nth-child(12) { animation-delay: 275ms; }
+    .data-table tbody tr:nth-child(13) { animation-delay: 300ms; }
+    .data-table tbody tr:nth-child(14) { animation-delay: 325ms; }
+    .data-table tbody tr:nth-child(15) { animation-delay: 350ms; }
+
+    @keyframes rowIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-20px) scale(0.98);
+        filter: blur(4px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    /* ========== Toolbar ========== */
+    .toolbar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .toolbar .search-box {
+      flex: 1;
+      min-width: 200px;
+      position: relative;
+    }
+
+    .toolbar .search-box input {
+      width: 100%;
+      padding: 12px 16px 12px 42px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      outline: none;
+      transition: var(--transition);
+      background: var(--surface-solid);
+      color: var(--text);
+      font-family: inherit;
+    }
+
+    .toolbar .search-box input::placeholder { color: var(--text-tertiary); }
+
+    .toolbar .search-box input:focus {
+      border-color: var(--text-secondary);
+      box-shadow: 0 0 0 3px rgba(0,0,0,0.04);
+    }
+
+    .toolbar .search-box .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-tertiary);
+      pointer-events: none;
+    }
+
+    /* ========== Buttons ========== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+      font-family: inherit;
+      letter-spacing: -0.01em;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-subtle);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-danger {
+      background: var(--surface-solid);
+      color: var(--danger);
+      border: 1px solid var(--border);
+    }
+
+    .btn-danger:hover {
+      background: rgba(192, 57, 43, 0.04);
+      border-color: rgba(192, 57, 43, 0.2);
+    }
+
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 13px;
+    }
+
+    .btn-secondary {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-strong);
+    }
+
+    /* ========== Badges ========== */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      min-width: 32px;
+    }
+
+    .badge-A { background: rgba(192, 57, 43, 0.08); color: #c0392b; border: 1px solid rgba(192, 57, 43, 0.15); }
+    .badge-B { background: rgba(230, 126, 34, 0.08); color: #e67e22; border: 1px solid rgba(230, 126, 34, 0.15); }
+    .badge-C { background: rgba(39, 174, 96, 0.08); color: #27ae60; border: 1px solid rgba(39, 174, 96, 0.15); }
+    .badge-D { background: rgba(29, 29, 31, 0.06); color: #1d1d1f; border: 1px solid rgba(0,0,0,0.08); }
+    .badge-S { background: rgba(212, 175, 55, 0.10); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.20); }
+
+    /* ========== Table ========== */
+    .data-table-wrapper {
+      overflow-x: auto;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .data-table thead th {
+      background: var(--bg);
+      color: var(--text-secondary);
+      font-weight: 500;
+      text-align: left;
+      padding: 14px 20px;
+      white-space: nowrap;
+      position: sticky;
+      top: 0;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .data-table tbody tr:last-child { border-bottom: none; }
+
+    .data-table tbody tr:hover {
+      background: rgba(0,0,0,0.015);
+    }
+
+    .data-table tbody td {
+      padding: 14px 20px;
+      vertical-align: middle;
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 64px 20px;
+      color: var(--text-tertiary);
+    }
+
+    .empty-state .empty-icon {
+      margin-bottom: 20px;
+      opacity: 0.4;
+    }
+
+    .empty-state p {
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    .empty-state p:last-child {
+      font-size: 13px;
+      margin-top: 6px;
+      color: var(--text-tertiary);
+    }
+
+    /* ========== Modal ========== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.25);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .modal-overlay.active { display: flex; }
+
+    .modal {
+      background: var(--surface-solid);
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 520px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-modal);
+      border: 1px solid var(--border);
+      animation: modalIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(20px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-header h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .modal-close {
+      background: none; border: none;
+      cursor: pointer; line-height: 1;
+      padding: 6px;
+      border-radius: 8px;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover {
+      background: var(--bg);
+    }
+
+    .modal-close:hover svg { color: var(--text); }
+
+    .modal-body { padding: 24px 28px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      letter-spacing: 0.01em;
+    }
+
+    .form-group label .required {
+      color: var(--danger);
+      margin-left: 2px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: var(--transition);
+      background: var(--surface-solid);
+      color: var(--text);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--text-tertiary); }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--text-secondary);
+      box-shadow: 0 0 0 4px rgba(0,0,0,0.03);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 88px;
+    }
+
+    .checkbox-label {
+      display: flex !important;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .checkbox-label input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .checkbox-label span {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      padding: 0 28px 28px;
+    }
+
+    /* ========== Import / Export Area ========== */
+    .import-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .import-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      letter-spacing: 0.02em;
+      font-family: inherit;
+    }
+    .import-btn:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+    .import-btn:active {
+      transform: scale(0.98);
+    }
+    .import-hint {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.02em;
+    }
+    .import-toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 2000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      white-space: nowrap;
+    }
+    .import-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* ========== Toast ========== */
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.15);
+      z-index: 2000;
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+      letter-spacing: -0.01em;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ========== Responsive ========== */
+    @media (max-width: 900px) {
+      .container { padding: 32px 20px; }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px; }
+      header h1 { font-size: 24px; }
+      .toolbar { flex-direction: column; align-items: stretch; }
+      .toolbar .search-box { min-width: auto; }
+      .section-body { padding: 20px; }
+      .section-header { padding: 16px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script src="config.js"></script>
+  <script src="data-service.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+  <div class="depth-bg"></div>
+  <div class="page-wrapper" id="pageWrapper">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb stagger-item stagger-0">
+        <a href="工单管理-主页.html" onclick="return navigateBack(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          返回主页
+        </a>
+        <span class="separator">/</span>
+        <span class="current">工单总表</span>
+      </div>
+
+      <header class="stagger-item stagger-0">
+        <div class="header-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+        </div>
+        <h1>工单总表</h1>
+        <p>浏览、搜索、编辑全部工单数据</p>
+      </header>
+
+      <!-- 导入导出区域 -->
+      <div class="import-area stagger-item stagger-0" style="margin-bottom:24px;">
+        <input type="file" id="obsidianFileInput" accept=".json" style="display:none">
+        <button class="import-btn" onclick="document.getElementById('obsidianFileInput').click()" title="选择Obsidian导出的JSON文件">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          导入Obsidian
+        </button>
+        <span class="import-hint">选择 sync_obsidian.py 生成的 JSON 文件</span>
+        <button class="import-btn" onclick="exportAsPng()" title="将工单总表导出为PNG图片" style="background:var(--surface-solid);color:var(--text);border:1px solid var(--border-strong);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          导出为PNG
+        </button>
+      </div>
+
+      <!-- 工单总表 -->
+      <div class="section stagger-item stagger-1">
+        <div class="section-header">
+          <h2><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></span> 数据表格</h2>
+        </div>
+        <div class="section-body">
+          <div class="stats-bar stagger-item stagger-2" id="statsBar"></div>
+          <div class="toolbar stagger-item stagger-2">
+            <div class="search-box">
+              <svg class="search-icon" style="width:16px;height:16px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+              <input type="text" id="searchInput" placeholder="搜索姓名、项目、内容、市场..." oninput="renderTable()">
+            </div>
+            <button class="btn btn-primary" onclick="openModal()">
+              <svg style="width:16px;height:16px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+              添加工单
+            </button>
+          </div>
+          <div class="data-table-wrapper stagger-item stagger-2">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>姓名</th>
+                  <th>首咨日期</th>
+                  <th>咨询项目</th>
+                  <th>咨询内容</th>
+                  <th>市场</th>
+                  <th>工单类型</th>
+                  <th>到店日期</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+                <!-- 动态生成 -->
+              </tbody>
+            </table>
+          </div>
+          <div class="empty-state" id="emptyState" style="display:none;">
+            <div class="empty-icon">
+              <svg style="width:48px;height:48px;color:var(--text-tertiary);" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+            </div>
+            <p>暂无工单记录</p>
+            <p>点击上方「添加工单」创建第一条记录</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 添加/编辑工单弹窗 -->
+  <div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">添加工单</h3>
+        <button class="modal-close" onclick="closeModal()">
+          <svg style="width:20px;height:20px;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="ticketForm" onsubmit="return false;">
+          <input type="hidden" id="editId">
+          <div class="form-group">
+            <label>姓名 <span class="required">*</span></label>
+            <input type="text" id="inputName" placeholder="请输入学员姓名" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>首咨日期 <span class="required">*</span></label>
+              <input type="date" id="inputDate" required>
+            </div>
+            <div class="form-group">
+              <label>到店日期</label>
+              <input type="date" id="inputVisitDate" placeholder="未到店可不填">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>咨询项目</label>
+            <input type="text" id="inputProject" placeholder="如：英语无忧计划、政治全程班等">
+          </div>
+          <div class="form-group">
+            <label>咨询内容</label>
+            <textarea id="inputContent" placeholder="学员咨询的具体内容、需求描述..."></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>市场（渠道）</label>
+              <input type="text" id="inputMarket" placeholder="如：抖音来客、公众号等">
+            </div>
+            <div class="form-group">
+              <label>工单类型 <span class="required">*</span></label>
+              <select id="inputType" required>
+                <option value="">请选择</option>
+                <option value="A">A - 高意向</option>
+                <option value="B">B - 有意向</option>
+                <option value="C">C - 一般意向</option>
+                <option value="D">D - 无意向</option>
+                <option value="S">S - 已成单</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="inputMeeting">
+                <span>已约腾讯会议</span>
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="inputDeal">
+                <span>已成单</span>
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal()">取消</button>
+        <button class="btn btn-primary" onclick="saveTicket()">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ========== Page Transition ==========
+    function navigateBack(event) {
+      event.preventDefault();
+      sessionStorage.setItem('pageAnim', 'fromTotal');
+      document.body.classList.add('exit-right');
+      const wrapper = document.getElementById('pageWrapper');
+      wrapper.classList.add('exit-right');
+      setTimeout(() => {
+        window.location.href = '工单管理-主页.html';
+      }, 400);
+      return false;
+    }
+
+    // ========== Import Toast ==========
+    function showImportToast(msg) {
+      let toast = document.getElementById('importToast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'importToast';
+        toast.className = 'import-toast';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    // ========== Toast ==========
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    // ========== Data Management ==========
+    const CACHE_KEY_V1 = 'work_orders_cache_v1';
+    let _cloudReady = false;
+
+    function loadData() {
+      // 优先读云端缓存（同步，立即返回）
+      try {
+        const raw = localStorage.getItem(CACHE_KEY_V1);
+        if (raw) {
+          const data = JSON.parse(raw);
+          if (Array.isArray(data)) return data;
+        }
+      } catch {}
+      // fallback: 读旧 localStorage
+      try {
+        const raw = localStorage.getItem('work_orders_v2');
+        if (!raw) return [];
+        const data = JSON.parse(raw);
+        return data.map(o => ({
+          ...o,
+          firstDate: o.firstDate || o.date || ''
+        }));
+      } catch { return []; }
+    }
+
+    function saveData(data) {
+      // 只写本地缓存，云端由具体操作触发
+      try {
+        localStorage.setItem(CACHE_KEY_V1, JSON.stringify(data));
+      } catch {}
+    }
+
+    function genId() {
+      return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[m]));
+    }
+
+    function formatDate(d) {
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${y}-${m}-${day}`;
+    }
+
+    // ========== Obsidian Merge ==========
+    function mergeObsidianData(obsidianOrders) {
+      const localData = loadData();
+      const obsidianMap = new Map();
+      obsidianOrders.forEach(o => {
+        const key = `${o.name}_${o.firstDate || o.date || ''}`;
+        obsidianMap.set(key, o);
+      });
+      localData.forEach(d => {
+        const key = `${d.name}_${d.firstDate || d.date || ''}`;
+        if (!obsidianMap.has(key)) {
+          obsidianMap.set(key, d);
+        }
+      });
+      const merged = Array.from(obsidianMap.values());
+      merged.sort((a, b) => ((b.firstDate || b.date || '').localeCompare(a.firstDate || a.date || '')));
+      saveData(merged);
+      return merged;
+    }
+
+    function syncFromObsidian() {
+      if (typeof OBSIDIAN_ORDERS === 'undefined' || !OBSIDIAN_ORDERS.length) {
+        showImportToast('Obsidian数据未加载');
+        return;
+      }
+      const merged = mergeObsidianData(OBSIDIAN_ORDERS);
+      renderTable();
+      updateStats();
+      showImportToast(`已同步 ${OBSIDIAN_ORDERS.length} 条工单`);
+    }
+
+    // ========== Export as PNG ==========
+    function exportAsPng() {
+      if (typeof html2canvas !== 'function') {
+        showImportToast('截图库未加载，请刷新页面');
+        return;
+      }
+      var tableSection = document.querySelector('.data-table-wrapper');
+      if (!tableSection) {
+        showImportToast('未找到表格区域');
+        return;
+      }
+      showImportToast('正在生成截图...');
+      try {
+        html2canvas(tableSection, {
+          backgroundColor: '#f5f5f7',
+          scale: 2,
+          useCORS: true,
+          logging: false
+        }).then(function(canvas) {
+          var link = document.createElement('a');
+          var dateStr = new Date().toISOString().slice(0, 10);
+          link.download = '工单总表-' + dateStr + '.png';
+          link.href = canvas.toDataURL('image/png');
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          showImportToast('截图已导出');
+        }).catch(function(err) {
+          console.error('Export error:', err);
+          showImportToast('截图失败: ' + (err.message || err));
+        });
+      } catch(e) {
+        console.error('Export exception:', e);
+        showImportToast('截图异常: ' + e.message);
+      }
+    }
+
+    // ========== Table Render ==========
+    function renderTable() {
+      const data = loadData();
+      const keyword = document.getElementById('searchInput').value.trim().toLowerCase();
+      const tbody = document.getElementById('tableBody');
+      const empty = document.getElementById('emptyState');
+
+      let filtered = data;
+      if (keyword) {
+        filtered = filtered.filter(o =>
+          (o.name && o.name.toLowerCase().includes(keyword)) ||
+          (o.project && o.project.toLowerCase().includes(keyword)) ||
+          (o.content && o.content.toLowerCase().includes(keyword)) ||
+          (o.market && o.market.toLowerCase().includes(keyword))
+        );
+      }
+      if (currentTypeFilter) {
+        filtered = filtered.filter(o => o.type === currentTypeFilter);
+      }
+
+      filtered.sort((a, b) => new Date(b.firstDate) - new Date(a.firstDate));
+
+      updateStats();
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = '';
+        empty.style.display = 'block';
+        return;
+      }
+
+      empty.style.display = 'none';
+      tbody.innerHTML = filtered.map(o => `
+        <tr>
+          <td><strong>${escapeHtml(o.name)}</strong></td>
+          <td>${o.firstDate}</td>
+          <td>${escapeHtml(o.project || '-')}</td>
+          <td>${escapeHtml(o.content || '-')}</td>
+          <td>${escapeHtml(o.market || '-')}</td>
+          <td><span class="badge badge-${o.type}">${o.type}</span></td>
+          <td>${o.visitDate || '<span style="color:var(--text-tertiary)">—</span>'}</td>
+          <td>
+            <div style="display:flex;gap:6px;">
+              <button class="btn btn-sm btn-secondary" onclick="editTicket('${o.id}')" title="编辑" style="padding:6px 10px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+              </button>
+              <button class="btn btn-sm btn-danger" onclick="deleteTicket('${o.id}')" title="删除" style="padding:6px 10px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function filterByType(type) {
+      if (currentTypeFilter === type) {
+        currentTypeFilter = null;
+      } else {
+        currentTypeFilter = type;
+      }
+      renderTable();
+      updateStats();
+    }
+
+    function updateStats() {
+      const data = loadData();
+      const stats = { A:0, B:0, C:0, D:0, S:0, total: data.length };
+      data.forEach(o => { if (stats[o.type] !== undefined) stats[o.type]++; });
+      const isActive = (t) => currentTypeFilter === t ? 'active' : '';
+      document.getElementById('statsBar').innerHTML = `
+        <div class="stat-item ${isActive(null)}" onclick="filterByType(null)"><strong>${stats.total}</strong>总工单</div>
+        <div class="stat-item ${isActive('A')}" onclick="filterByType('A')"><strong>${stats.A}</strong>A级</div>
+        <div class="stat-item ${isActive('B')}" onclick="filterByType('B')"><strong>${stats.B}</strong>B级</div>
+        <div class="stat-item ${isActive('C')}" onclick="filterByType('C')"><strong>${stats.C}</strong>C级</div>
+        <div class="stat-item ${isActive('D')}" onclick="filterByType('D')"><strong>${stats.D}</strong>D级</div>
+        <div class="stat-item ${isActive('S')}" onclick="filterByType('S')"><strong>${stats.S}</strong>已成单</div>
+      `;
+    }
+
+    // ========== Modal Operations ==========
+    function openModal(defaultDate) {
+      document.getElementById('modalOverlay').classList.add('active');
+      document.getElementById('modalTitle').textContent = '添加工单';
+      document.getElementById('ticketForm').reset();
+      document.getElementById('editId').value = '';
+      document.getElementById('inputDate').value = defaultDate || formatDate(new Date());
+      setTimeout(() => document.getElementById('inputName').focus(), 100);
+    }
+
+    function editTicket(id) {
+      const data = loadData();
+      const order = data.find(o => o.id === id);
+      if (!order) return;
+      document.getElementById('modalOverlay').classList.add('active');
+      document.getElementById('modalTitle').textContent = '编辑工单';
+      document.getElementById('editId').value = order.id;
+      document.getElementById('inputName').value = order.name || '';
+      document.getElementById('inputDate').value = order.firstDate || '';
+      document.getElementById('inputVisitDate').value = order.visitDate || '';
+      document.getElementById('inputProject').value = order.project || '';
+      document.getElementById('inputContent').value = order.content || '';
+      document.getElementById('inputMarket').value = order.market || '';
+      document.getElementById('inputType').value = order.type || '';
+      document.getElementById('inputMeeting').checked = !!order.meeting;
+      document.getElementById('inputDeal').checked = !!order.deal || order.type === 'S';
+      setTimeout(() => document.getElementById('inputName').focus(), 100);
+    }
+
+    function deleteTicket(id) {
+      if (!confirm('确定要删除这条工单吗？')) return;
+      let cloudOk = false;
+      // 先从缓存查找 _objectId
+      const data = loadData();
+      const target = data.find(o => o.id === id);
+      // 云端删除
+      if (window.WorkOrderService && WorkOrderService.isReady() && target && target._objectId) {
+        WorkOrderService.deleteOrder(target._objectId).then(() => {
+          showToast('云端删除成功');
+        }).catch(err => {
+          console.warn('云端删除失败：', err);
+          showToast('云端删除失败，已删除本地记录');
+        });
+        cloudOk = true;
+      }
+      // 本地删除
+      const newData = data.filter(o => o.id !== id);
+      saveData(newData);
+      renderTable();
+      updateStats();
+      if (!cloudOk) showToast('工单已删除');
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('active');
+    }
+
+    function saveTicket() {
+      const id = document.getElementById('editId').value;
+      const name = document.getElementById('inputName').value.trim();
+      const firstDate = document.getElementById('inputDate').value;
+      const visitDate = document.getElementById('inputVisitDate').value;
+      const project = document.getElementById('inputProject').value.trim();
+      const content = document.getElementById('inputContent').value.trim();
+      const market = document.getElementById('inputMarket').value.trim();
+      const type = document.getElementById('inputType').value;
+      const meeting = document.getElementById('inputMeeting').checked;
+      let deal = document.getElementById('inputDeal').checked;
+      if (type === 'S') deal = true;
+
+      if (!name) { showToast('请输入姓名'); return; }
+      if (!firstDate) { showToast('请选择首咨日期'); return; }
+      if (!type) { showToast('请选择工单类型'); return; }
+
+      const data = loadData();
+      let targetOrder = null;
+      let cloudPromise = null;
+
+      if (id) {
+        // 更新
+        const idx = data.findIndex(o => o.id === id);
+        if (idx >= 0) {
+          data[idx] = { ...data[idx], name, firstDate, visitDate, project, content, market, type, meeting, deal };
+          targetOrder = data[idx];
+          saveData(data);
+          // 云端更新
+          if (window.WorkOrderService && WorkOrderService.isReady() && targetOrder._objectId) {
+            cloudPromise = WorkOrderService.updateOrder(targetOrder).then(updated => {
+              // 更新 _objectId（如果有变化）
+              data[idx]._objectId = updated._objectId || data[idx]._objectId;
+              saveData(data);
+            }).catch(err => {
+              console.warn('云端更新失败：', err);
+              showToast('云端更新失败，已保存到本地');
+            });
+          } else if (window.WorkOrderService && WorkOrderService.isReady()) {
+            // 没有 _objectId，新增到云端
+            cloudPromise = WorkOrderService.addOrder(targetOrder).then(added => {
+              data[idx]._objectId = added._objectId;
+              saveData(data);
+            }).catch(err => {
+              console.warn('云端添加失败：', err);
+            });
+          }
+        }
+      } else {
+        // 新增
+        const newOrder = { id: genId(), name, firstDate, visitDate, project, content, market, type, meeting, deal, createdAt: Date.now() };
+        data.push(newOrder);
+        saveData(data);
+        targetOrder = newOrder;
+        // 云端新增
+        if (window.WorkOrderService && WorkOrderService.isReady()) {
+          cloudPromise = WorkOrderService.addOrder(newOrder).then(added => {
+            const idx2 = data.findIndex(o => o.id === newOrder.id);
+            if (idx2 >= 0) {
+              data[idx2]._objectId = added._objectId;
+              saveData(data);
+            }
+          }).catch(err => {
+            console.warn('云端添加失败：', err);
+            showToast('云端添加失败，已保存到本地');
+          });
+        }
+      }
+
+      closeModal();
+      renderTable();
+      updateStats();
+      showToast(id ? '工单已更新' : '工单已添加');
+    }
+
+    // ========== File Import ==========
+    document.getElementById('obsidianFileInput').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        try {
+          const obsidianOrders = JSON.parse(evt.target.result);
+          if (!Array.isArray(obsidianOrders)) {
+            showImportToast('JSON格式错误：应为数组');
+            return;
+          }
+          mergeObsidianData(obsidianOrders);
+          renderTable();
+          updateStats();
+          showImportToast(`成功导入 ${obsidianOrders.length} 条工单`);
+        } catch (err) {
+          showImportToast('解析失败：' + err.message);
+        }
+      };
+      reader.readAsText(file);
+      this.value = '';
+    });
+
+    // ========== Init ==========
+    document.addEventListener('DOMContentLoaded', () => {
+      const animDir = sessionStorage.getItem('pageAnim');
+
+      if (animDir === 'fromHome') {
+        document.body.classList.add('page-enter');
+      } else {
+        document.body.classList.add('page-enter');
+        const style = document.createElement('style');
+        style.textContent = `
+          @keyframes enterSlideIn {
+            from { transform: translateY(16px); opacity: 0; filter: blur(6px); scale: 0.97; }
+            to { transform: translateY(0); opacity: 1; filter: blur(0); scale: 1; }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+
+      // ---- 云端初始化 ----
+      let cloudReady = false;
+      if (window.WorkOrderService) {
+        WorkOrderService.init().then(() => {
+          cloudReady = true;
+          _cloudReady = true;
+          // 后台同步云端数据
+          syncFromCloud();
+          // 检测是否需要迁移
+          checkAndMigrate();
+        }).catch(err => {
+          console.warn('[工单系统] 云端初始化失败：', err.message);
+          showToast('云端连接失败，使用本地数据');
+        });
+      }
+
+      // Merge Obsidian data on load (still works with local cache)
+      if (typeof OBSIDIAN_ORDERS !== 'undefined' && OBSIDIAN_ORDERS.length > 0) {
+        mergeObsidianData(OBSIDIAN_ORDERS);
+      }
+      renderTable();
+
+      // S type <-> deal checkbox sync
+      const typeSelect = document.getElementById('inputType');
+      const dealCheckbox = document.getElementById('inputDeal');
+      if (typeSelect && dealCheckbox) {
+        typeSelect.addEventListener('change', () => {
+          if (typeSelect.value === 'S') dealCheckbox.checked = true;
+        });
+        dealCheckbox.addEventListener('change', () => {
+          if (!dealCheckbox.checked && typeSelect.value === 'S') typeSelect.value = '';
+        });
+      }
+
+      setTimeout(() => {
+        sessionStorage.removeItem('pageAnim');
+      }, 1000);
+    });
+
+    // ========== Cloud Sync helpers ==========
+    let _cloudReady = false;
+
+    function syncFromCloud() {
+      if (!window.WorkOrderService || !_cloudReady) return;
+      WorkOrderService.loadData().then(data => {
+        // data-service.js 已更新缓存，重新渲染
+        renderTable();
+        updateStats();
+        console.log('[工单系统] 云端同步完成，' + data.length + ' 条');
+      }).catch(err => {
+        console.warn('[工单系统] 云端同步失败：', err);
+      });
+    }
+
+    function checkAndMigrate() {
+      if (!window.WorkOrderService || !_cloudReady) return;
+      WorkOrderService.checkNeedsMigration().then(result => {
+        if (Array.isArray(result) && result.length > 0) {
+          if (confirm('检测到本地有 ' + result.length + ' 条工单，是否迁移到云端？')) {
+            WorkOrderService.migrateFromLocal(result).then(count => {
+              showToast('已迁移 ' + count + ' 条工单到云端');
+              syncFromCloud();
+            }).catch(err => {
+              showToast('迁移失败：' + err.message);
+            });
+          }
+        }
+      }).catch(() => {});
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+  <!-- PWA Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+        .then((reg) => console.log('SW registered:', reg.scope))
+        .catch((err) => console.log('SW failed:', err));
+    }
+  </script>
+</body>
+</html>

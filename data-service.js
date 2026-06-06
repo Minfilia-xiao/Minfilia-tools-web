@@ -19,6 +19,19 @@
   const CACHE_KEY = 'work_orders_cache_v2';
   const CONFIG = window.APP_CONFIG && window.APP_CONFIG.github;
 
+  /** 获取 GitHub Token（支持从 localStorage 或 prompt 输入） */
+  function getToken() {
+    if (CONFIG && CONFIG.token) return CONFIG.token;
+    var stored = localStorage.getItem('github_token');
+    if (stored) return stored;
+    var input = prompt('请输入你的 GitHub Personal Access Token（仅保存在本浏览器）：');
+    if (input && input.trim()) {
+      localStorage.setItem('github_token', input.trim());
+      return input.trim();
+    }
+    return '';
+  }
+
   // ========== 工具函数 ==========
 
   /** 读取本地缓存 */
@@ -44,7 +57,7 @@
     return fetch(url, {
       ...options,
       headers: {
-        'Authorization': 'token ' + CONFIG.token,
+        'Authorization': 'token ' + getToken(),
         'Accept': 'application/vnd.github.v3+json',
         'Content-Type': 'application/json',
         ...((options && options.headers) || {})

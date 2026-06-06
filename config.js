@@ -13,7 +13,7 @@ window.APP_CONFIG = {
     owner: 'Minfilia-xiao',
     repo: 'Minfilia-tools-web',
     branch: 'main',
-    token: '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',
+    token: '', // 首次使用时网页会提示输入，自动保存在浏览器本地
     dataPath: 'work_orders.json'
   }
 };

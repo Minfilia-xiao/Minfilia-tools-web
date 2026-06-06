@@ -860,6 +860,10 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           导出JSON
         </button>
+        <button class="import-btn" onclick="exportToObsidian()" title="导出所有工单为Obsidian JSON文件" style="background:var(--surface-solid);color:var(--text);border:1px solid var(--border-strong);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          导出Obsidian
+        </button>
         <button class="import-btn" onclick="exportAsPng()" title="将工单总表导出为PNG图片" style="background:var(--surface-solid);color:var(--text);border:1px solid var(--border-strong);">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           导出为PNG
@@ -1092,6 +1096,14 @@
       const merged = Array.from(obsidianMap.values());
       merged.sort((a, b) => ((b.firstDate || b.date || '').localeCompare(a.firstDate || a.date || '')));
       saveData(merged);
+      // 同步到云端
+      if (window.WorkOrderService && WorkOrderService.isReady && WorkOrderService.isReady()) {
+        WorkOrderService.saveData(merged).then(function() {
+          console.log('[Obsidian同步] 已同步到云端');
+        }).catch(function(err) {
+          console.warn('[Obsidian同步] 云端同步失败', err);
+        });
+      }
       return merged;
     }
 
@@ -1162,6 +1174,21 @@
       reader.readAsText(file);
       this.value = '';
     });
+
+    // ========== Export to Obsidian ==========
+    function exportToObsidian() {
+      const data = loadData();
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'obsidian_orders_' + new Date().toISOString().slice(0, 10) + '.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showImportToast('已导出 ' + data.length + ' 条工单供Obsidian使用');
+    }
 
     // ========== Export as PNG ==========
     function exportAsPng() {

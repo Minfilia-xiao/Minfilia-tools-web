@@ -1,6 +1,6 @@
-// Service Worker for 工单管理系统 - offline support v2
-// 关键改进：HTML文件始终网络优先，绕过浏览器HTTP缓存
-const CACHE_NAME = 'work-orders-v2';
+// Service Worker for 工单管理系统 - offline support v3
+// 合并本周视图和总表视图为单一页面
+const CACHE_NAME = 'work-orders-v3';
 const ASSETS = [
   '/',
   '/工单管理-总表.html',

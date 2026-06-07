@@ -1034,6 +1034,7 @@
     // ========== Data Management ==========
     const CACHE_KEY_V1 = 'work_orders_cache_v1';
     let _cloudReady = false;
+    let currentTypeFilter = null;
 
     function loadData() {
       // 优先读云端缓存（同步，立即返回）

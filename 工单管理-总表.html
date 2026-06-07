@@ -1558,7 +1558,7 @@
   <!-- PWA Service Worker -->
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js')
+      navigator.serviceWorker.register('./sw.js?v=2')
         .then((reg) => console.log('SW registered:', reg.scope))
         .catch((err) => console.log('SW failed:', err));
     }

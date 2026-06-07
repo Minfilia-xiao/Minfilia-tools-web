@@ -1520,7 +1520,7 @@
     });
 
     // ========== Cloud Sync helpers ==========
-    let _cloudReady = false;
+    // _cloudReady 已在上方声明，此处不再重复声明
 
     function syncFromCloud() {
       if (!window.WorkOrderService || !_cloudReady) return;

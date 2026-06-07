@@ -988,6 +988,10 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           导出Obsidian
         </button>
+        <button class="import-btn" onclick="generateLoginLink()" title="生成跨设备登录链接，复制后在其他设备打开即可自动登录" style="background:var(--surface-solid);color:var(--text);border:1px solid var(--border-strong);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          生成登录链接
+        </button>
         <button class="import-btn" onclick="exportAsPng()" title="将工单总表导出为PNG图片" style="background:var(--surface-solid);color:var(--text);border:1px solid var(--border-strong);">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           导出为PNG
@@ -1408,6 +1412,57 @@
         console.error('Export exception:', e);
         showImportToast('截图异常: ' + e.message);
       }
+    }
+
+    // ========== 生成跨设备登录链接 ==========
+    function generateLoginLink() {
+      var token = localStorage.getItem('github_token');
+      if (!token) {
+        showImportToast('请先输入 GitHub Token');
+        // 触发一次 getToken 以弹窗输入
+        if (window.WorkOrderService && WorkOrderService.isReady()) {
+          // Token 已存在但不在这个变量中，忽略
+        } else {
+          // 强制重新获取 Token
+          try {
+            var t = prompt('请输入你的 GitHub Personal Access Token：');
+            if (t && t.trim()) {
+              token = t.trim();
+              localStorage.setItem('github_token', token);
+              showImportToast('Token 已保存，请重新点击「生成登录链接」');
+            }
+          } catch(e) {}
+        }
+        return;
+      }
+      // 生成包含 Token 的 URL（Token 放在 hash 中，不会发送到服务器）
+      var url = window.location.origin + window.location.pathname + '#token=' + encodeURIComponent(token);
+      // 尝试复制到剪贴板
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function() {
+          showImportToast('登录链接已复制到剪贴板！在其他设备打开即可自动登录');
+        }).catch(function() {
+          fallbackCopy(url);
+        });
+      } else {
+        fallbackCopy(url);
+      }
+    }
+
+    function fallbackCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showImportToast('登录链接已复制到剪贴板！');
+      } catch(e) {
+        prompt('请复制以下链接，在其他设备打开：', text);
+      }
+      document.body.removeChild(ta);
     }
 
     // ========== Table Render ==========

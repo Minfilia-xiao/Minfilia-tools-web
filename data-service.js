@@ -19,11 +19,33 @@
   const CACHE_KEY = 'work_orders_cache_v2';
   const CONFIG = window.APP_CONFIG && window.APP_CONFIG.github;
 
-  /** 获取 GitHub Token（支持从 localStorage 或 prompt 输入） */
+  /** 获取 GitHub Token（支持 URL hash、localStorage 或 prompt 输入） */
   function getToken() {
     if (CONFIG && CONFIG.token) return CONFIG.token;
+
+    // 1) 检查 URL hash 中的 token（跨设备登录链接）
+    try {
+      var hash = window.location.hash;
+      if (hash && hash.length > 1) {
+        var params = new URLSearchParams(hash.substring(1));
+        var tokenFromUrl = params.get('token');
+        if (tokenFromUrl) {
+          var decoded = decodeURIComponent(tokenFromUrl);
+          localStorage.setItem('github_token', decoded);
+          // 清除 hash 中的 token，避免暴露在历史记录中
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+          // 通知页面 Token 已自动保存
+          if (typeof showToast === 'function') showToast('Token 已自动保存');
+          return decoded;
+        }
+      }
+    } catch (e) {}
+
+    // 2) 从 localStorage 获取
     var stored = localStorage.getItem('github_token');
     if (stored) return stored;
+
+    // 3) 弹窗输入
     var input = prompt('请输入你的 GitHub Personal Access Token（仅保存在本浏览器）：');
     if (input && input.trim()) {
       localStorage.setItem('github_token', input.trim());

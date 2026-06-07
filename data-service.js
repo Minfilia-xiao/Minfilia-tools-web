@@ -108,7 +108,7 @@
     /** 初始化（检查配置） */
     init: function () {
       return new Promise(function (resolve, reject) {
-        if (!CONFIG || !CONFIG.token || !CONFIG.owner || !CONFIG.repo) {
+        if (!CONFIG || !getToken() || !CONFIG.owner || !CONFIG.repo) {
           reject(new Error('GitHub 配置不完整，请检查 config.js'));
           return;
         }
@@ -118,7 +118,7 @@
 
     /** 检查是否已配置 */
     isReady: function () {
-      return !!(CONFIG && CONFIG.token && CONFIG.owner && CONFIG.repo);
+      return !!(CONFIG && getToken() && CONFIG.owner && CONFIG.repo);
     },
 
     /** 读取全部工单（优先云端，失败用缓存） */

@@ -589,16 +589,16 @@
           </table>
           </div>
 
-          <!-- 导入导出按钮 -->
+          <!-- 同步按钮 -->
           <div class="import-area stagger-item stagger-2">
             <input type="file" id="obsidianFileInput" accept=".json" style="display:none">
-            <button class="import-btn" onclick="document.getElementById('obsidianFileInput').click()" title="选择Obsidian导出的JSON文件">
+            <button class="import-btn" onclick="document.getElementById('obsidianFileInput').click()" title="选择Obsidian导出的JSON文件，导入到总表">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
               导入Obsidian
             </button>
             <button class="import-btn" onclick="exportToObsidian()" title="将本周工单导出为Obsidian JSON文件" style="background:var(--surface-solid);color:var(--text);border:1px solid var(--border-strong);">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              导出Obsidian
+              导出到 Obsidian
             </button>
             <button class="import-btn" onclick="exportAsPng()" title="将本周工单表导出为PNG图片" style="background:var(--surface-solid);color:var(--text);border:1px solid var(--border-strong);">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
@@ -708,44 +708,6 @@
       const m = String(d.getMonth() + 1).padStart(2, '0');
       const day = String(d.getDate()).padStart(2, '0');
       return `${y}-${m}-${day}`;
-    }
-
-    // ========== Obsidian Merge ==========
-    function mergeObsidianData(obsidianOrders) {
-      const localData = loadData();
-      const obsidianMap = new Map();
-      obsidianOrders.forEach(o => {
-        const key = `${o.name}_${o.firstDate || o.date || ''}`;
-        obsidianMap.set(key, o);
-      });
-      localData.forEach(d => {
-        const key = `${d.name}_${d.firstDate || d.date || ''}`;
-        if (!obsidianMap.has(key)) {
-          obsidianMap.set(key, d);
-        }
-      });
-      const merged = Array.from(obsidianMap.values());
-      merged.sort((a, b) => ((b.firstDate || b.date || '').localeCompare(a.firstDate || a.date || '')));
-      saveData(merged);
-      // 同步到云端
-      if (window.WorkOrderService && WorkOrderService.isReady && WorkOrderService.isReady()) {
-        WorkOrderService.saveData(merged).then(function() {
-          console.log('[Obsidian同步] 已同步到云端');
-        }).catch(function(err) {
-          console.warn('[Obsidian同步] 云端同步失败', err);
-        });
-      }
-      return merged;
-    }
-
-    function syncFromObsidian() {
-      if (typeof OBSIDIAN_ORDERS === 'undefined' || !OBSIDIAN_ORDERS.length) {
-        showImportToast('Obsidian数据未加载');
-        return;
-      }
-      const merged = mergeObsidianData(OBSIDIAN_ORDERS);
-      renderWeek();
-      showImportToast(`已同步 ${OBSIDIAN_ORDERS.length} 条工单`);
     }
 
     // ========== Export to Obsidian ==========
@@ -875,29 +837,6 @@
       renderWeek();
     }
 
-    // ========== File Import ==========
-    document.getElementById('obsidianFileInput').addEventListener('change', function(e) {
-      const file = e.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = function(evt) {
-        try {
-          const obsidianOrders = JSON.parse(evt.target.result);
-          if (!Array.isArray(obsidianOrders)) {
-            showImportToast('JSON格式错误：应为数组');
-            return;
-          }
-          mergeObsidianData(obsidianOrders);
-          renderWeek();
-          showImportToast(`成功导入 ${obsidianOrders.length} 条工单`);
-        } catch (err) {
-          showImportToast('解析失败：' + err.message);
-        }
-      };
-      reader.readAsText(file);
-      this.value = '';
-    });
-
     // ========== Init ==========
     let _cloudReadyWeek = false;
 
@@ -943,9 +882,6 @@
       }
 
       // Merge Obsidian data on load
-      if (typeof OBSIDIAN_ORDERS !== 'undefined' && OBSIDIAN_ORDERS.length > 0) {
-        mergeObsidianData(OBSIDIAN_ORDERS);
-      }
       renderWeek();
 
       // Clean up
@@ -957,7 +893,7 @@
   <!-- PWA Service Worker -->
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js')
+      navigator.serviceWorker.register('./sw.js?v=2')
         .then((reg) => console.log('SW registered:', reg.scope))
         .catch((err) => console.log('SW failed:', err));
     }

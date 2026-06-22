@@ -1,5 +1,369 @@
 [
   {
+    "id": "叶小C",
+    "name": "叶小C",
+    "firstDate": "2026-06-22",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "",
+    "market": "",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "翼想天开",
+    "name": "翼想天开",
+    "firstDate": "2026-06-22",
+    "visitDate": "",
+    "project": "四级",
+    "content": "咨询暑期四级课程，学员准大一，在柳州上学",
+    "market": "蒙珊珊内推",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "璇公主",
+    "name": "璇公主",
+    "firstDate": "2026-06-22",
+    "visitDate": "",
+    "project": "28考研",
+    "content": "预计27号到店面谈，本科金融学，打算跨考英语相关的专业，目标院校北京外国语大学/中国人民大学",
+    "market": "小红书",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "张女士",
+    "name": "张女士",
+    "firstDate": "2026-06-22",
+    "visitDate": "",
+    "project": "四级",
+    "content": "家长为孩子咨询，孩子开学大一，目标桂电的理工科专业，咨询暑期四级网课，家在桂林",
+    "market": "百教网",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "廖翊含",
+    "name": "廖翊含",
+    "firstDate": "2026-06-22",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "家长为孩子咨询考研课，电话中介绍了一半，说接下来让孩子拨打顾问的手机号介绍，等待学员电联",
+    "market": "抖音来客-新媒体管家",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "Tractor",
+    "name": "Tractor",
+    "firstDate": "2026-06-22",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "咨询单科数学，已经通过微信，正在做课程介绍",
+    "market": "小红书",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "顾先生",
+    "name": "顾先生",
+    "firstDate": "2026-06-22",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "顾家长为孩子咨询，二战，医学生，康复方向，西医综合。不允许加微信，家庭会议决定报班后再加微信，这段时间电话联系",
+    "market": "",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "好运来",
+    "name": "好运来",
+    "firstDate": "2026-06-22",
+    "visitDate": "",
+    "project": "28考研",
+    "content": "28考级考生，咨询应用统计/统计学考研，有计划提前学习，已在微信做完课程介绍、粗略的价格介绍，学生对价格没多大异议，但也需要和家人商量",
+    "market": "抖音来客-新媒体管家",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "山巅",
+    "name": "山巅",
+    "firstDate": "2026-06-21",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "专科读应用化工技术，本科资源循环科学工程（化工与制药类），咨询专业课考物化或者化工原理的化工专业考研。目标院校哈工大等西南地区、江浙沪等地的211以上院校。今晚预约了腾讯会议",
+    "market": "小红书",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "易家长",
+    "name": "易家长",
+    "firstDate": "2026-06-21",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "家长为孩子咨询考研，二战，生物技术专业，目标院校西北民族大学。第一年成绩英语24，政治50+，数学50，专业课130。小孩接过家长电话后了解情况，打算过几天来南宁看看新东方，但是不同意添加微信，已经给家长留言添加微信的事宜",
+    "market": "地图标点",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "红红家长",
+    "name": "红红家长",
+    "firstDate": "2026-06-21",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "家长提孩子做考研咨询，孩子本科计算课，考本专业。家长打算过几天来一趟门店做咨询，时间未定，定下来之后会跟顾问确定",
+    "market": "蒙珊珊内推",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "我是茶叶蛋",
+    "name": "我是茶叶蛋",
+    "firstDate": "2026-06-21",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "厦门大学嘉庚学院机械电子工程，想考广西大学875机械，学员倾向线上课，已做完线下课和线上课的课程介绍，等待学员做出选择",
+    "market": "",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "V一",
+    "name": "V一",
+    "firstDate": "2026-06-21",
+    "visitDate": "",
+    "project": "28考研",
+    "content": "28考级考生，音乐教育本科，打算跨考体育教育专硕，目标院校南宁师范大学。",
+    "market": "腾讯广告",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "Lik-m",
+    "name": "Lik-m",
+    "firstDate": "2026-06-21",
+    "visitDate": "",
+    "project": "28考研",
+    "content": "在职人员，咨询地址类专业学硕的考研，由于需要出差，只考虑无忧计划网课。已在电话上做完比较详细的介绍，学员还需要考虑",
+    "market": "抖音来客-新媒体管家",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "19879445298",
+    "name": "19879445298",
+    "firstDate": "2026-06-20",
+    "visitDate": "",
+    "project": "四级",
+    "content": "家长为孩子咨询暑期四级课程，但是家长更偏向于全封闭式的四级课程学习，需要考虑一段时间",
+    "market": "蒙珊珊内推",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "13977161085",
+    "name": "13977161085",
+    "firstDate": "2026-06-20",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "家长介绍自己的侄子过来学习考研英语和政治，大概在周一到店咨询",
+    "market": "顾问转介绍",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "LY",
+    "name": "LY",
+    "firstDate": "2026-06-20",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "家长为孩子咨询。现在还在外面旅游，不方便接电话。微信已经添加，时刻保持联系",
+    "market": "抖音来客-新媒体管家",
+    "type": "C",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "刘刘刘",
+    "name": "刘刘刘",
+    "firstDate": "2026-06-20",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "学员咨询数学一网课，已通过微信介绍直通车和无忧计划，学员倾向无忧计划，但是觉得价格有点贵，还在犹豫中",
+    "market": "抖音来客-新媒体管家",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "TDQ家长",
+    "name": "TDQ家长",
+    "firstDate": "2026-06-20",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "家长咨询，广西艺术学院大三学员，打算7月中旬入班学习，放假后打算先去一趟日本旅游。电话已沟通，家长对价格没有多大异议，只打算在新东方学习英政考研",
+    "market": "福誉教育",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "游子家长",
+    "name": "游子家长",
+    "firstDate": "2026-06-20",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "家长帮学员咨询，北京师范大学生态学方向的本科生，二战考生。家长今晚跟孩子确认一下考研的意愿，现在孩子在考研和工作中徘徊。打算在新东方学习全科",
+    "market": "百度",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "潘羿辰家长",
+    "name": "潘羿辰家长",
+    "firstDate": "2026-06-20",
+    "visitDate": "",
+    "project": "28考研",
+    "content": "家长到店为孩子咨询六级课程，未来有考研的打算，打算考农学类专业，具体专业未定，家长是武汉人现在在广西做生意，目标院校华中农业大学/西大。暑假先过来学六级，之后再考研",
+    "market": "直访",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "卢洪妃家长",
+    "name": "卢洪妃家长",
+    "firstDate": "2026-06-19",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "家长到店咨询地理信息技术专业的考研，初步帮孩子了解一下情况，等孩子放假后再一起上门咨询",
+    "market": "",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "喵🐱",
+    "name": "喵🐱",
+    "firstDate": "2026-06-16",
+    "visitDate": "",
+    "project": "28考研",
+    "content": "28考级学员咨询考研全科，河北人在南宁上学，正在做课程介绍和学习规划，过段时间需要做择校择专",
+    "market": "抖音来客-新媒体管家",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "孙思源",
+    "name": "孙思源",
+    "firstDate": "2026-06-16",
+    "visitDate": "",
+    "project": "28考研",
+    "content": "广艺戏剧影视专业大二，咨询考研/保研，即将到店，需要择校择专。",
+    "market": "百度",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "小歪",
+    "name": "小歪",
+    "firstDate": "2026-06-16",
+    "visitDate": "",
+    "project": "28考研",
+    "content": "28考季的学员，本科会计，打算跨专业考学科教育语文，也在考虑会计。先加微信了解价格，已做完课程介绍，持续跟进",
+    "market": "抖音来客-新媒体管家",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "蒋海刚",
+    "name": "蒋海刚",
+    "firstDate": "2026-06-16",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "家长帮孩子咨询，二战考生学科教育语文，孩子在梧州上学，咨询网课，家长要求微信交流，在微信上做完课程介绍价格介绍，家长未见回应",
+    "market": "",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "郑亿乐",
+    "name": "郑亿乐",
+    "firstDate": "2026-06-16",
+    "visitDate": "",
+    "project": "28考研",
+    "content": "广艺戏剧影视专业大二，咨询考研/保研，即将到店，需要择校择专。",
+    "market": "百度",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "ZZ",
+    "name": "ZZ",
+    "firstDate": "2026-06-15",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "在职人员咨询考研英政，打算8月份报名强冲的学习，已做完介绍，学员对新东方的师资、配套服务很满意，就是价格上需要斟酌一番",
+    "market": "公众号",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
     "id": "小龚",
     "name": "小龚",
     "firstDate": "2026-06-15",
@@ -10,33 +374,33 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
-    "id": "还好",
-    "name": "还好",
+    "id": "张雪莹",
+    "name": "张雪莹",
     "firstDate": "2026-06-15",
-    "visitDate": "",
-    "project": "四六级",
-    "content": "家长帮孩子咨询暑期六级课程，意向极高，等家长和孩子沟通后决定缴费，对价格没有异议",
-    "market": "抖音来客-新媒体管家",
-    "type": "",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "诸葛亮和诸葛暗",
-    "name": "诸葛亮和诸葛暗",
-    "firstDate": "2026-06-15",
-    "visitDate": "",
+    "visitDate": "6.15",
     "project": "27考研",
-    "content": "在编老师打算考非全硕士，咨询考研英语课程，已通过微信介绍相对应的课程",
-    "market": "福誉教育",
+    "content": "直访，大三学生，咨询会计/管综考研，已完成面谈课程介绍学习规划择校择专，学员回家与家里人商量报班事宜",
+    "market": "直访",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "李小倩",
+    "name": "李小倩",
+    "firstDate": "2026-06-15",
+    "visitDate": "6.16",
+    "project": "27考研",
+    "content": "音乐学本科，考研哈尔滨音乐学院音乐学学硕。二战考生。只需要英语",
+    "market": "大众点评",
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "梁中泉爸爸",
@@ -49,33 +413,33 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
-    "id": "jennierubyjiane",
-    "name": "jennierubyjiane",
-    "firstDate": "2026-06-14",
-    "visitDate": "",
-    "project": "四六级",
-    "content": "咨询暑期四级，已介绍课程价格，学员没有回复",
-    "market": "",
-    "type": "",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "LuCifer",
-    "name": "LuCifer",
-    "firstDate": "2026-06-14",
+    "id": "诸葛亮和诸葛暗",
+    "name": "诸葛亮和诸葛暗",
+    "firstDate": "2026-06-15",
     "visitDate": "",
     "project": "27考研",
-    "content": "李婷转介绍，到店咨询社会学/民族学学硕考研，院校未确定，学员目标地区为江浙沪等发达地区，未来打算进入大厂实习，目标院校为211以上",
-    "market": "李婷转介绍",
+    "content": "在编老师打算考非全硕士，咨询考研英语课程，已通过微信介绍相对应的课程",
+    "market": "福誉教育",
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "还好",
+    "name": "还好",
+    "firstDate": "2026-06-15",
+    "visitDate": "",
+    "project": "四六级",
+    "content": "家长帮孩子咨询暑期六级课程，意向极高，等家长和孩子沟通后决定缴费，对价格没有异议",
+    "market": "抖音来客-新媒体管家",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
   },
   {
     "id": "HunnyBee",
@@ -88,7 +452,33 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "LuCifer",
+    "name": "LuCifer",
+    "firstDate": "2026-06-14",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "李婷转介绍，到店咨询社会学/民族学学硕考研，院校未确定，学员目标地区为江浙沪等发达地区，未来打算进入大厂实习，目标院校为211以上",
+    "market": "李婷转介绍",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "jennierubyjiane",
+    "name": "jennierubyjiane",
+    "firstDate": "2026-06-14",
+    "visitDate": "",
+    "project": "四六级",
+    "content": "咨询暑期四级，已介绍课程价格，学员没有回复",
+    "market": "",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
   },
   {
     "id": "陈嘉洛",
@@ -101,7 +491,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "yy",
@@ -114,7 +504,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "一口南瓜饼",
@@ -127,33 +517,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "对方正在输入",
-    "name": "对方正在输入",
-    "firstDate": "2026-06-11",
-    "visitDate": "",
-    "project": "口语",
-    "content": "在职学员，咨询成人口语，报价后学员便没有回复",
-    "market": "",
-    "type": "",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "陆雨婷",
-    "name": "陆雨婷",
-    "firstDate": "2026-06-11",
-    "visitDate": "",
-    "project": "27考研",
-    "content": "民大小咨会，咨询数学学硕考研，目标院校广西民族大学（本校），已经面谈完成课程介绍，邀约学员周日到店试听",
-    "market": "民大小咨会",
-    "type": "A",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "LAS",
@@ -166,7 +530,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "乌苏黑名单",
@@ -179,7 +543,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "夏花绚烂",
@@ -192,7 +556,33 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "对方正在输入",
+    "name": "对方正在输入",
+    "firstDate": "2026-06-11",
+    "visitDate": "",
+    "project": "口语",
+    "content": "在职学员，咨询成人口语，报价后学员便没有回复",
+    "market": "大众点评",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "陆雨婷",
+    "name": "陆雨婷",
+    "firstDate": "2026-06-11",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "民大小咨会，咨询数学学硕考研，目标院校广西民族大学（本校），已经面谈完成课程介绍，邀约学员周日到店试听",
+    "market": "民大小咨会",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
   },
   {
     "id": "邓同学",
@@ -205,46 +595,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "水云归",
-    "name": "水云归",
-    "firstDate": "2026-06-08",
-    "visitDate": "",
-    "project": "28考研",
-    "content": "医学生咨询考研网课，目前只意向西医综合网课，已同时介绍完英政课程。学员打算今年先完成执业医师证考试，医师证通过后备考硕士。目标远考首都医科大/广西医科大",
-    "market": "百度",
-    "type": "B",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "李家长",
-    "name": "李家长",
-    "firstDate": "2026-06-08",
-    "visitDate": "",
-    "project": "暑期四六级",
-    "content": "家长咨询暑期四六级，孩子现在高三，正在高考，等高校录取完毕后决定是否需要大学预科学习。",
-    "market": "巨量本地推",
-    "type": "B",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "墨染辞忧",
-    "name": "墨染辞忧",
-    "firstDate": "2026-06-08",
-    "visitDate": "",
-    "project": "27考研",
-    "content": "咨询计算机技术专硕考研的408学习，微信完成了课程介绍和价格说明，学员需要与家人沟通。暂定12号邀约学员到店试听",
-    "market": "小红书",
-    "type": "B",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Loricat",
@@ -257,7 +608,46 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "墨染辞忧",
+    "name": "墨染辞忧",
+    "firstDate": "2026-06-08",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "咨询计算机技术专硕考研的408学习，微信完成了课程介绍和价格说明，学员需要与家人沟通。暂定12号邀约学员到店试听",
+    "market": "小红书",
+    "type": "B",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "李家长",
+    "name": "李家长",
+    "firstDate": "2026-06-08",
+    "visitDate": "",
+    "project": "暑期四六级",
+    "content": "家长咨询暑期四六级，孩子现在高三，正在高考，等高校录取完毕后决定是否需要大学预科学习。",
+    "market": "巨量本地推",
+    "type": "B",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "水云归",
+    "name": "水云归",
+    "firstDate": "2026-06-08",
+    "visitDate": "",
+    "project": "28考研",
+    "content": "医学生咨询考研网课，目前只意向西医综合网课，已同时介绍完英政课程。学员打算今年先完成执业医师证考试，医师证通过后备考硕士。目标远考首都医科大/广西医科大",
+    "market": "百度",
+    "type": "B",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
   },
   {
     "id": "24h全自动铲屎官",
@@ -270,72 +660,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "静姐",
-    "name": "静姐",
-    "firstDate": "2026-06-06",
-    "visitDate": "",
-    "project": "29考研",
-    "content": "小孩开学大二，在武汉就读播音主持专业，提前计划考研。家长确定一定会报班考研，坐等时间来到",
-    "market": "林欣瑾内推",
-    "type": "A",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "黄莉渟",
-    "name": "黄莉渟",
-    "firstDate": "2026-06-06",
-    "visitDate": "",
-    "project": "27考研",
-    "content": "到店听讲座，广西财经学院大三学员，咨询金融专硕考研，即将邀约学员参加本周的经综公开课",
-    "market": "校代",
-    "type": "C",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "小哪",
-    "name": "小哪",
-    "firstDate": "2026-06-06",
-    "visitDate": "",
-    "project": "27考研",
-    "content": "北方民族大学的行政管理大四毕业，已经回到南宁，打算跨考广西大学金融专硕。已经电话+微信做完考学规划和课程介绍，学员考虑中",
-    "market": "小红书",
-    "type": "A",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "依央嘉波",
-    "name": "依央嘉波",
-    "firstDate": "2026-06-06",
-    "visitDate": "",
-    "project": "27考研",
-    "content": "黑龙江人，打算考广西医科大，7月份来南宁备考，持续跟进中",
-    "market": "小红书",
-    "type": "A",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "百花香",
-    "name": "百花香",
-    "firstDate": "2026-06-06",
-    "visitDate": "",
-    "project": "27考研",
-    "content": "家长为孩子咨询广西大学动物医学专业的考研，意向全科，电话沟通中已做完课程分析和介绍",
-    "market": "抖音来客-新媒体管家",
-    "type": "",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "万同学",
@@ -348,7 +673,72 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "依央嘉波",
+    "name": "依央嘉波",
+    "firstDate": "2026-06-06",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "黑龙江人，打算考广西医科大，7月份来南宁备考，持续跟进中",
+    "market": "小红书",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "小哪",
+    "name": "小哪",
+    "firstDate": "2026-06-06",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "北方民族大学的行政管理大四毕业，已经回到南宁，打算跨考广西大学金融专硕。已经电话+微信做完考学规划和课程介绍，学员考虑中",
+    "market": "小红书",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "百花香",
+    "name": "百花香",
+    "firstDate": "2026-06-06",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "家长为孩子咨询广西大学动物医学专业的考研，意向全科，电话沟通中已做完课程分析和介绍",
+    "market": "抖音来客-新媒体管家",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "静姐",
+    "name": "静姐",
+    "firstDate": "2026-06-06",
+    "visitDate": "",
+    "project": "29考研",
+    "content": "小孩开学大二，在武汉就读播音主持专业，提前计划考研。家长确定一定会报班考研，坐等时间来到",
+    "market": "林欣瑾内推",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "黄莉渟",
+    "name": "黄莉渟",
+    "firstDate": "2026-06-06",
+    "visitDate": "",
+    "project": "27考研",
+    "content": "到店听讲座，广西财经学院大三学员，咨询金融专硕考研，即将邀约学员参加本周的经综公开课",
+    "market": "校代",
+    "type": "C",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
   },
   {
     "id": "一只猫",
@@ -361,7 +751,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "56",
@@ -374,7 +764,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "HH",
@@ -387,7 +777,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "丹丹",
@@ -400,7 +790,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "外卖到噜",
@@ -413,20 +803,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "木子清",
-    "name": "木子清",
-    "firstDate": "2026-06-04",
-    "visitDate": "",
-    "project": "28考研",
-    "content": "医学专科，专升本第一年，公共事业管理，打算跨考法律非法，已完成择校择专",
-    "market": "其他合作渠道",
-    "type": "A",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "星辰大海",
@@ -439,7 +816,20 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "木子清",
+    "name": "木子清",
+    "firstDate": "2026-06-04",
+    "visitDate": "",
+    "project": "28考研",
+    "content": "医学专科，专升本第一年，公共事业管理，打算跨考法律非法，已完成择校择专",
+    "market": "其他合作渠道",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
   },
   {
     "id": "毛哥",
@@ -452,7 +842,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "蜕变",
@@ -465,7 +855,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "陈良钧",
@@ -478,7 +868,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "韦艳虹",
@@ -491,7 +881,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Rin",
@@ -504,7 +894,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "关关家长",
@@ -517,7 +907,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "董娟",
@@ -530,7 +920,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "吉祥如意",
@@ -543,7 +933,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "悠心家长",
@@ -556,7 +946,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "lollipop",
@@ -569,7 +959,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "北极熊拥抱冬天",
@@ -582,7 +972,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "抽风阿姐",
@@ -595,7 +985,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "中中家长",
@@ -608,7 +998,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "小咪",
@@ -621,7 +1011,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "韦泓宇",
@@ -634,7 +1024,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "黄老师",
@@ -647,7 +1037,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "黄诗琪妈妈",
@@ -660,7 +1050,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Actual",
@@ -673,7 +1063,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "子芯",
@@ -686,7 +1076,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "我的橘子丢了",
@@ -699,7 +1089,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "李妈妈",
@@ -712,7 +1102,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "毛毛想当国王",
@@ -725,7 +1115,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "芳芳家长",
@@ -738,7 +1128,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "贰贰",
@@ -751,7 +1141,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "超级钢铁侠",
@@ -764,7 +1154,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "小咪",
@@ -777,7 +1167,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "我草莓招了",
@@ -790,7 +1180,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "李同学",
@@ -803,7 +1193,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "destiny",
@@ -816,7 +1206,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "再回到从前",
@@ -829,7 +1219,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "江浙沪猛男",
@@ -842,7 +1232,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "眼泪煲稀饭",
@@ -855,7 +1245,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "幸运相随",
@@ -868,7 +1258,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "22X",
@@ -881,7 +1271,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "川川",
@@ -894,7 +1284,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "睡到自然醒",
@@ -907,7 +1297,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "小张同学",
@@ -920,7 +1310,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "冰岚",
@@ -933,7 +1323,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "温婷婷",
@@ -946,7 +1336,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "赵潮周",
@@ -959,7 +1349,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Sophia",
@@ -972,7 +1362,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "WW",
@@ -980,12 +1370,12 @@
     "firstDate": "2026-05-22",
     "visitDate": "",
     "project": "咨询27考研",
-    "content": "大专毕业咨询南宁师范大学新传专业考研，已介绍完相关的课程安排、配套服务、课程价格。学员打算全科参与一对一教学，正在与家长沟通中，等待学员反馈",
-    "market": "",
-    "type": "A",
+    "content": "大专毕业咨询南宁师范大学新传专业考研，已介绍完相关的课程安排、配套服务、课程价格",
+    "market": "抖音来客-新媒体管家",
+    "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "叶家长",
@@ -998,7 +1388,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "梁世星",
@@ -1011,7 +1401,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "章子龙",
@@ -1024,7 +1414,7 @@
     "type": "S",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "辉",
@@ -1037,7 +1427,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "HT",
@@ -1050,7 +1440,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "大飞鹅鹅鹅鹅鹅",
@@ -1063,7 +1453,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "一只风筝",
@@ -1076,20 +1466,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "耶耶",
-    "name": "耶耶",
-    "firstDate": "2026-05-20",
-    "visitDate": "",
-    "project": "咨询27考研",
-    "content": "在广东上学，咨询音乐学考研，初步意向院校是内蒙古师范大学和浙江师范大学，打算走少数民族骨干计划，已完成择校择专、课程介绍、宿舍环境介绍等环节。学员6月底回到南宁，7月份加入班级学习",
-    "market": "坦途网",
-    "type": "A",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "肥",
@@ -1102,7 +1479,20 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "耶耶",
+    "name": "耶耶",
+    "firstDate": "2026-05-20",
+    "visitDate": "",
+    "project": "咨询27考研",
+    "content": "在广东上学，咨询音乐学考研，初步意向院校是内蒙古师范大学和浙江师范大学，打算走少数民族骨干计划，已完成择校择专、课程介绍、宿舍环境介绍等环节。学员6月底回到南宁，7月份加入班级学习",
+    "market": "坦途网",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
   },
   {
     "id": "黄燕瑜",
@@ -1115,7 +1505,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "唐艺源",
@@ -1128,7 +1518,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "安心",
@@ -1141,7 +1531,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "王妙玥",
@@ -1154,7 +1544,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Leviathan",
@@ -1167,7 +1557,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "没关系",
@@ -1175,12 +1565,12 @@
     "firstDate": "2026-05-18",
     "visitDate": "",
     "project": "咨询27考研",
-    "content": "大专毕业一年，咨询公共管理（行政管理）专业的考研，正在择校的过程，尝试邀请学员到店试听英语课",
+    "content": "大专毕业一年，咨询公共管理（行政管理）专业的考研，正在择校的过程，尝试邀请学员到店试听英语课。学员在期末考试期间，短期内无法到到店",
     "market": "集团投放",
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "C",
@@ -1193,7 +1583,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "张金生",
@@ -1206,7 +1596,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "13847092822",
@@ -1219,7 +1609,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "元气超超人",
@@ -1232,7 +1622,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "小羽同学",
@@ -1245,7 +1635,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "栗",
@@ -1258,7 +1648,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "覃著",
@@ -1271,7 +1661,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "岑家长",
@@ -1284,7 +1674,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "南方",
@@ -1297,7 +1687,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "周姝汕",
@@ -1310,7 +1700,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "张梓天",
@@ -1323,7 +1713,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "颜瑞阳",
@@ -1336,7 +1726,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "刘佳欣",
@@ -1349,7 +1739,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "刘佳欣1",
@@ -1362,7 +1752,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "戴鸿宇",
@@ -1375,7 +1765,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "李振宇",
@@ -1388,7 +1778,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "蒋march",
@@ -1401,7 +1791,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "袁霞",
@@ -1414,7 +1804,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "覃伟康",
@@ -1427,7 +1817,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "麻大为",
@@ -1440,7 +1830,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "18907749378",
@@ -1453,7 +1843,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Bluew",
@@ -1466,7 +1856,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Aurora",
@@ -1479,7 +1869,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Feng",
@@ -1492,7 +1882,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "UNO",
@@ -1505,7 +1895,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Nuyoah",
@@ -1518,7 +1908,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "束橙",
@@ -1531,7 +1921,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "小土豆",
@@ -1544,7 +1934,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "杨同学",
@@ -1557,7 +1947,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "吴不言",
@@ -1570,7 +1960,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "周同学妈妈",
@@ -1583,7 +1973,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "李妈妈",
@@ -1596,7 +1986,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "计昌宏",
@@ -1609,7 +1999,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "钱庄宇",
@@ -1622,7 +2012,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "廖贞",
@@ -1635,7 +2025,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "范承韬",
@@ -1648,7 +2038,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "韦家钧",
@@ -1661,7 +2051,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "李博远妈妈",
@@ -1674,7 +2064,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "黄琮茗",
@@ -1687,7 +2077,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "慧慧",
@@ -1700,7 +2090,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "吴女士",
@@ -1713,7 +2103,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "hoho",
@@ -1726,7 +2116,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "不是叶落无痕",
@@ -1739,7 +2129,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "华仔",
@@ -1752,7 +2142,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "诚信友善",
@@ -1765,7 +2155,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "马丹妮",
@@ -1778,7 +2168,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "LY_",
@@ -1791,7 +2181,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "韦文卓",
@@ -1804,7 +2194,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "廖先会",
@@ -1817,7 +2207,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "杨璐羽",
@@ -1830,7 +2220,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "王乙妃",
@@ -1843,7 +2233,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "石佳琪",
@@ -1856,7 +2246,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "高崇源",
@@ -1869,7 +2259,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "兮尔",
@@ -1882,7 +2272,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "叶女士",
@@ -1895,7 +2285,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Hesperides",
@@ -1908,7 +2298,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "枫之忆",
@@ -1921,7 +2311,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "钟一震",
@@ -1934,7 +2324,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "韦紫珊",
@@ -1947,7 +2337,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "丁一",
@@ -1960,7 +2350,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "星栖",
@@ -1973,7 +2363,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "杨亚",
@@ -1986,7 +2376,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "瑞安堂林家铺子",
@@ -1999,7 +2389,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "道句晚安",
@@ -2012,7 +2402,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "尹修荣",
@@ -2025,7 +2415,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "沉壁",
@@ -2038,7 +2428,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "有志青年",
@@ -2051,7 +2441,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "minmin",
@@ -2064,7 +2454,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "东",
@@ -2077,7 +2467,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "黄琼砚",
@@ -2090,7 +2480,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "AAA猛吃香菜",
@@ -2103,7 +2493,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Vivian",
@@ -2116,7 +2506,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "覃同学",
@@ -2129,7 +2519,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "张维义",
@@ -2142,7 +2532,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "米米",
@@ -2155,7 +2545,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "花花世界",
@@ -2168,7 +2558,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "蒙关宇（娜娜家长）",
@@ -2181,7 +2571,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "陈爸爸考研",
@@ -2194,7 +2584,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "黄潇潇",
@@ -2207,7 +2597,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "何婧雯",
@@ -2220,7 +2610,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "吴曈",
@@ -2233,7 +2623,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "曾诗婷",
@@ -2246,7 +2636,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "李佳尧",
@@ -2259,7 +2649,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "李思行",
@@ -2272,7 +2662,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "韦慧灵",
@@ -2285,7 +2675,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "魏鑫",
@@ -2298,7 +2688,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "黄家长",
@@ -2311,7 +2701,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "张馨匀",
@@ -2324,7 +2714,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "杨蕙霞",
@@ -2337,7 +2727,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "陈依馨",
@@ -2350,7 +2740,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "春风",
@@ -2363,7 +2753,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "周津玄",
@@ -2376,7 +2766,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "徐雅莉",
@@ -2389,7 +2779,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "梁小敏",
@@ -2402,7 +2792,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "梁志钢",
@@ -2415,7 +2805,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "毓",
@@ -2428,7 +2818,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "邓佳琪",
@@ -2441,7 +2831,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "你的仙女啊",
@@ -2454,7 +2844,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "噜啦啦噜噜",
@@ -2467,7 +2857,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "，，，",
@@ -2480,7 +2870,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "一一",
@@ -2493,7 +2883,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "AAA草编兔子批发商",
@@ -2506,20 +2896,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "DNA",
-    "name": "DNA",
-    "firstDate": "2026-04-07",
-    "visitDate": "",
-    "project": "咨询27考研",
-    "content": "学员打算暑期再过来参加强冲班的复习，不需要基础期的学习，持续维护中",
-    "market": "小红书",
-    "type": "C",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "CC同学",
@@ -2532,7 +2909,20 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "DNA",
+    "name": "DNA",
+    "firstDate": "2026-04-07",
+    "visitDate": "",
+    "project": "咨询27考研",
+    "content": "学员打算暑期再过来参加强冲班的复习，不需要基础期的学习，持续维护中",
+    "market": "小红书",
+    "type": "C",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
   },
   {
     "id": "HFC珍",
@@ -2545,7 +2935,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Iarancsm_fya",
@@ -2558,7 +2948,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Mi Manchi",
@@ -2571,7 +2961,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Mm",
@@ -2584,7 +2974,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Weidm",
@@ -2597,7 +2987,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "wsy",
@@ -2610,7 +3000,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "三十八度风",
@@ -2623,7 +3013,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "丹",
@@ -2636,7 +3026,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "吴泱霖",
@@ -2649,20 +3039,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "周思洋",
-    "name": "周思洋",
-    "firstDate": "2026-04-07",
-    "visitDate": "2026-04-12",
-    "project": "咨询27考研",
-    "content": "到店咨询试听英语正式课，美术生考研，导师已选定，只需要英语政治，相关课程设置与价格已经为学员介绍，等待学员之后反馈。已报名其他小机构的英政",
-    "market": "学管",
-    "type": "D",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "嘉",
@@ -2675,7 +3052,20 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "周思洋",
+    "name": "周思洋",
+    "firstDate": "2026-04-07",
+    "visitDate": "2026-04-12",
+    "project": "咨询27考研",
+    "content": "到店咨询试听英语正式课，美术生考研，导师已选定，只需要英语政治，相关课程设置与价格已经为学员介绍，等待学员之后反馈。已报名其他小机构的英政",
+    "market": "学管",
+    "type": "D",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
   },
   {
     "id": "小新同学",
@@ -2688,7 +3078,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "心想事橙",
@@ -2701,7 +3091,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "暖心",
@@ -2714,7 +3104,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "李一凡",
@@ -2727,7 +3117,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "李先生",
@@ -2740,7 +3130,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "李婷",
@@ -2753,7 +3143,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "杨佳裕",
@@ -2766,33 +3156,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "梁家长",
-    "name": "梁家长",
-    "firstDate": "2026-04-07",
-    "visitDate": "",
-    "project": "咨询27考研",
-    "content": "已同步新东方的开课信息，再次发起课程意愿的询问，等待学员回复",
-    "market": "客服",
-    "type": "",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "梁桂丽",
-    "name": "梁桂丽",
-    "firstDate": "2026-04-07",
-    "visitDate": "",
-    "project": "咨询四级线下",
-    "content": "家里人不同意报名参加四级班课，现在还在跟家里人商量中",
-    "market": "小红书",
-    "type": "D",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "林煜泉",
@@ -2805,7 +3169,33 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "梁家长",
+    "name": "梁家长",
+    "firstDate": "2026-04-07",
+    "visitDate": "",
+    "project": "咨询27考研",
+    "content": "已同步新东方的开课信息，再次发起课程意愿的询问，等待学员回复",
+    "market": "客服",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "梁桂丽",
+    "name": "梁桂丽",
+    "firstDate": "2026-04-07",
+    "visitDate": "",
+    "project": "咨询四级线下",
+    "content": "家里人不同意报名参加四级班课，现在还在跟家里人商量中",
+    "market": "小红书",
+    "type": "D",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
   },
   {
     "id": "橙子鱼",
@@ -2818,7 +3208,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "潘怡心",
@@ -2831,20 +3221,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "王较瘦",
-    "name": "王较瘦",
-    "firstDate": "2026-04-07",
-    "visitDate": "",
-    "project": "咨询四级线下",
-    "content": "已经留言四级班课第一节课开课的消息，等待学员微信回消息（学员未留下手机号码）",
-    "market": "客服",
-    "type": "",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "甘静怡",
@@ -2857,7 +3234,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "画地",
@@ -2870,7 +3247,20 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "王较瘦",
+    "name": "王较瘦",
+    "firstDate": "2026-04-07",
+    "visitDate": "",
+    "project": "咨询四级线下",
+    "content": "已经留言四级班课第一节课开课的消息，等待学员微信回消息（学员未留下手机号码）",
+    "market": "客服",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
   },
   {
     "id": "苏家长",
@@ -2883,7 +3273,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "覃净媛",
@@ -2896,7 +3286,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "郭女士家长",
@@ -2909,7 +3299,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "龙汉涛",
@@ -2922,7 +3312,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "可",
@@ -2935,7 +3325,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "在线咨询",
@@ -2948,7 +3338,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "曹同学",
@@ -2961,7 +3351,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "未知",
@@ -2974,7 +3364,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "vvvlvl",
@@ -2987,7 +3377,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "。。",
@@ -3000,7 +3390,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "优秀的人",
@@ -3013,7 +3403,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "沐浴清风",
@@ -3026,7 +3416,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "趁热拿铁",
@@ -3039,7 +3429,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "那山那水",
@@ -3052,7 +3442,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "陈文富",
@@ -3065,7 +3455,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "P同学",
@@ -3078,7 +3468,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "RvemiW",
@@ -3091,7 +3481,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "p同学的同学",
@@ -3104,7 +3494,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "zoey",
@@ -3117,7 +3507,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "周靖宇",
@@ -3130,7 +3520,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "收米",
@@ -3143,7 +3533,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "松子",
@@ -3156,7 +3546,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "罗平",
@@ -3169,7 +3559,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "苏观海",
@@ -3182,7 +3572,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "董馨",
@@ -3195,7 +3585,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "谭杰",
@@ -3208,7 +3598,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "廖先生",
@@ -3221,7 +3611,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "栗子味的糖",
@@ -3234,7 +3624,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "胡淑娴",
@@ -3247,7 +3637,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "覃旭林",
@@ -3260,7 +3650,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "韦叔",
@@ -3273,7 +3663,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Simpleboy",
@@ -3286,7 +3676,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "刘佳明",
@@ -3299,7 +3689,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "史迪奇不用睡觉",
@@ -3312,7 +3702,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "哈哈",
@@ -3325,20 +3715,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "嘉嘉家长",
-    "name": "嘉嘉家长",
-    "firstDate": "2026-04-01",
-    "visitDate": "2026-04-10",
-    "project": "咨询27考研",
-    "content": "家长为孩子咨询，4月10日已到店咨询考研相关事宜，家长能接受线上无忧计划的价格，需要回家与孩子商讨是否报班学习",
-    "market": "客服",
-    "type": "C",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "啊盖",
@@ -3351,7 +3728,20 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "嘉嘉家长",
+    "name": "嘉嘉家长",
+    "firstDate": "2026-04-01",
+    "visitDate": "2026-04-10",
+    "project": "咨询27考研",
+    "content": "家长为孩子咨询，4月10日已到店咨询考研相关事宜，家长能接受线上无忧计划的价格，需要回家与孩子商讨是否报班学习",
+    "market": "客服",
+    "type": "C",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
   },
   {
     "id": "梁同学",
@@ -3364,7 +3754,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "梁同学（家长）",
@@ -3377,7 +3767,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "浮萍",
@@ -3390,7 +3780,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "雪落无声",
@@ -3403,7 +3793,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "霍同学",
@@ -3416,7 +3806,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "黄昏",
@@ -3429,7 +3819,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "曾同学",
@@ -3442,7 +3832,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "木沐木沐",
@@ -3455,20 +3845,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "王俏",
-    "name": "王俏",
-    "firstDate": "2026-03-31",
-    "visitDate": "",
-    "project": "小咨会咨询考研",
-    "content": "现场完成了择校择专，学员暂时没有报班需求，需长期跟进",
-    "market": "新东方91校园大使",
-    "type": "",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "王蔓婷",
@@ -3481,7 +3858,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "班家长",
@@ -3494,7 +3871,20 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "王俏",
+    "name": "王俏",
+    "firstDate": "2026-03-31",
+    "visitDate": "",
+    "project": "小咨会咨询考研",
+    "content": "现场完成了择校择专，学员暂时没有报班需求，需长期跟进",
+    "market": "新东方91校园大使",
+    "type": "",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
   },
   {
     "id": "茨",
@@ -3507,7 +3897,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "许藤磊",
@@ -3520,7 +3910,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "雷欣明",
@@ -3533,7 +3923,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "韦先生",
@@ -3546,7 +3936,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "明天会更好",
@@ -3559,7 +3949,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "夏天的云",
@@ -3572,7 +3962,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "此剑平不平",
@@ -3585,7 +3975,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "文宇翔",
@@ -3598,7 +3988,7 @@
     "type": "A",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "侯家长",
@@ -3611,7 +4001,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "蔡柳燕女士",
@@ -3624,7 +4014,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "贺达军",
@@ -3637,7 +4027,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "钟越",
@@ -3650,7 +4040,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "俊颜映清辉",
@@ -3663,7 +4053,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Lin",
@@ -3676,7 +4066,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "春暖花开",
@@ -3689,7 +4079,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "黄佳琳家长",
@@ -3702,7 +4092,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "朱海春",
@@ -3715,7 +4105,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "oxeno",
@@ -3728,7 +4118,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "刘姝君",
@@ -3741,7 +4131,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "碧清",
@@ -3754,7 +4144,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "小陈",
@@ -3767,7 +4157,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "摇晃着的多巴胺",
@@ -3780,7 +4170,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "莫莫家长",
@@ -3793,7 +4183,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "吴丹宁",
@@ -3806,7 +4196,7 @@
     "type": "B",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "梁欣雨",
@@ -3819,7 +4209,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Y",
@@ -3832,7 +4222,7 @@
     "type": "C",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "予ᰔ悦余生",
@@ -3845,7 +4235,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "康朝钧",
@@ -3858,7 +4248,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "未知",
@@ -3871,7 +4261,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "易冬艳",
@@ -3884,7 +4274,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "付浩然",
@@ -3897,7 +4287,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "李滢",
@@ -3910,7 +4300,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "淇姐",
@@ -3923,7 +4313,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "赵欣淇",
@@ -3936,7 +4326,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "47",
@@ -3949,7 +4339,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Z同学",
@@ -3962,7 +4352,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "你说话呀说话呀",
@@ -3975,7 +4365,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "椰",
@@ -3988,7 +4378,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "邹宛龙",
@@ -4001,7 +4391,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "free",
@@ -4014,7 +4404,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "不吃学习（香菜版）",
@@ -4027,20 +4417,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "温妈妈",
-    "name": "温妈妈",
-    "firstDate": "2026-03-11",
-    "visitDate": "2026-03-29",
-    "project": "咨询27考研",
-    "content": "已到店咨询，家长希望孩子冲击985硕士，正在和孩子沟通报班中",
-    "market": "客服",
-    "type": "A",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "梁漫灵",
@@ -4053,7 +4430,20 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "温妈妈",
+    "name": "温妈妈",
+    "firstDate": "2026-03-11",
+    "visitDate": "2026-03-29",
+    "project": "咨询27考研",
+    "content": "已到店咨询，家长希望孩子冲击985硕士，正在和孩子沟通报班中",
+    "market": "客服",
+    "type": "A",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
   },
   {
     "id": "耿",
@@ -4066,7 +4456,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "听风声等雨来",
@@ -4079,7 +4469,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "岑欣钰",
@@ -4092,7 +4482,7 @@
     "type": "",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "张佳佳",
@@ -4105,7 +4495,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "杨日畅",
@@ -4118,7 +4508,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "王思敏",
@@ -4131,7 +4521,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "红角蓝生",
@@ -4144,7 +4534,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "随烟",
@@ -4157,7 +4547,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "N",
@@ -4170,7 +4560,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "nuono",
@@ -4183,7 +4573,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "周生",
@@ -4196,7 +4586,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "黄睿6",
@@ -4209,7 +4599,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "faculte",
@@ -4222,7 +4612,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "朱峻宏",
@@ -4235,7 +4625,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "李玲玲",
@@ -4248,7 +4638,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "Monica心心",
@@ -4261,7 +4651,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "徐同学",
@@ -4274,20 +4664,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
-  },
-  {
-    "id": "文同学",
-    "name": "文同学",
-    "firstDate": "2026-03-06",
-    "visitDate": "",
-    "project": "咨询27考研",
-    "content": "学员觉得太贵了",
-    "market": "",
-    "type": "D",
-    "meeting": false,
-    "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "拿了小铁",
@@ -4300,7 +4677,20 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
+  },
+  {
+    "id": "文同学",
+    "name": "文同学",
+    "firstDate": "2026-03-06",
+    "visitDate": "",
+    "project": "咨询27考研",
+    "content": "学员觉得太贵了",
+    "market": "",
+    "type": "D",
+    "meeting": false,
+    "deal": false,
+    "createdAt": 1782134792869
   },
   {
     "id": "松子鱼",
@@ -4313,7 +4703,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "LHL18078274200",
@@ -4326,7 +4716,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "汪建",
@@ -4339,7 +4729,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "潘世友",
@@ -4352,7 +4742,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "吴少清律师",
@@ -4365,7 +4755,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "孟依",
@@ -4378,7 +4768,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "未知",
@@ -4391,7 +4781,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "栋栋",
@@ -4404,7 +4794,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "演员",
@@ -4417,7 +4807,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "en.Frikk",
@@ -4430,7 +4820,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "陈一麦",
@@ -4443,7 +4833,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "joke",
@@ -4456,7 +4846,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "天熠",
@@ -4469,7 +4859,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "清梦",
@@ -4482,7 +4872,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "盘工",
@@ -4495,7 +4885,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "覃彤",
@@ -4508,7 +4898,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "想飞",
@@ -4521,7 +4911,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "未知",
@@ -4534,7 +4924,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "老带新用户",
@@ -4547,7 +4937,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "庞诗瑶",
@@ -4560,7 +4950,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "周思婷",
@@ -4573,7 +4963,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "王先生",
@@ -4586,7 +4976,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "松田阵平",
@@ -4599,7 +4989,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "梁沛钰",
@@ -4612,7 +5002,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "陆杰慧",
@@ -4625,7 +5015,7 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   },
   {
     "id": "刘先生",
@@ -4638,6 +5028,6 @@
     "type": "D",
     "meeting": false,
     "deal": false,
-    "createdAt": 1781527154672
+    "createdAt": 1782134792869
   }
 ]

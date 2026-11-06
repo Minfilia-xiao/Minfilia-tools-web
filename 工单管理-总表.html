@@ -1481,7 +1481,9 @@
           (o.market && o.market.toLowerCase().includes(keyword))
         );
       }
-      if (currentTypeFilter) {
+      if (currentTypeFilter === 'XZH') {
+        filtered = filtered.filter(o => (o.market || '').includes('小咨会'));
+      } else if (currentTypeFilter) {
         filtered = filtered.filter(o => o.type === currentTypeFilter);
       }
 
@@ -1531,8 +1533,11 @@
 
     function updateStats() {
       const data = loadData();
-      const stats = { A:0, B:0, C:0, D:0, S:0, total: data.length };
-      data.forEach(o => { if (stats[o.type] !== undefined) stats[o.type]++; });
+      const stats = { A:0, B:0, C:0, D:0, S:0, xzh:0, total: data.length };
+      data.forEach(o => {
+        if (stats[o.type] !== undefined) stats[o.type]++;
+        if ((o.market || '').includes('小咨会')) stats.xzh++;
+      });
       const isActive = (t) => currentTypeFilter === t ? 'active' : '';
       document.getElementById('statsBar').innerHTML = `
         <div class="stat-item ${isActive(null)}" onclick="filterByType(null)"><strong>${stats.total}</strong>总工单</div>
@@ -1541,6 +1546,7 @@
         <div class="stat-item ${isActive('C')}" onclick="filterByType('C')"><strong>${stats.C}</strong>C级</div>
         <div class="stat-item ${isActive('D')}" onclick="filterByType('D')"><strong>${stats.D}</strong>D级</div>
         <div class="stat-item ${isActive('S')}" onclick="filterByType('S')"><strong>${stats.S}</strong>已成单</div>
+        <div class="stat-item ${isActive('XZH')}" onclick="filterByType('XZH')"><strong>${stats.xzh}</strong>小咨会</div>
       `;
     }
 
